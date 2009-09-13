@@ -1,0 +1,171 @@
+%  ############################################################################
+%  #    This file is part of GNU Oflox                                        #
+%  #    Copyright (C) 2006, 2007, 2008, 2009 by Andres Sajo                   #
+%  #    talassio-at-gmail-dot-com                                             #
+%  #                                                                          #
+%  #    This program is free software; you can redistribute it and/or modify  #
+%  #    it under the terms of the GNU General Public License as published by  #
+%  #    the Free Software Foundation; either version 3 of the License, or     #
+%  #    (at your option) any later version.                                   #
+%  #                                                                          #
+%  #    This program is distributed in the hope that it will be useful,       #
+%  #    but WITHOUT ANY WARRANTY; without even the implied warranty of        #
+%  #    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the         #
+%  #    GNU General Public License for more details.                          #
+%  #                                                                          #
+%  #    You should have received a copy of the GNU General Public License     #
+%  #    along with this program; if not, write to the                         #
+%  #    Free Software Foundation, Inc.,                                       #
+%  #    59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.             #
+%  ############################################################################
+%
+%  Universidad Sim\'on Bol\'ivar
+%  Coordinaci\'on de Matematicas
+%  Departamento de C\'omputo Cient\'ifico y Estad\'istica
+%
+% oflox_mo LaTeX output template
+% Version \FMCversion
+% 05/07/08, 20/08/2009
+%
+\documentclass[11pt]{article}
+\usepackage{graphics} % Necesary
+\usepackage{xcolor} % Necesary
+\usepackage{amsfonts} % Necesary
+\usepackage{amsmath} % Necesary
+\usepackage[letterpaper,left=1.5cm,right=1cm, top=1cm, bottom=1cm]{geometry}
+
+% Graphics format (this goes right in to \includegraphics(...))
+\newcommand{\FMCimageformat}{ps}
+
+% space between tables
+\newcommand{\FMCtblseparation}{1.0em}
+\newcommand{\FMCvspace}{1.0em}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% LANGUAGE DEFINITIONS
+
+% Spanish version
+\newcommand{\FMCiterlabeles}{Iteraci\'on\  \theiterationcnt\ (\FMCproblem)\\[1.0ex]}
+% English version
+\newcommand{\FMCiterlabelen}{Iteration\  \theiterationcnt\ (\FMCproblem)\\[1.0ex]}
+
+% Captions of \FMCinit
+%  1) The problem description label
+%  2) The iterative initial label
+
+% Spanish version
+\newcommand{\FMCproblemlabeles}{Descripci\'on del problema\ (\FMCproblem)\\[1.0ex]}
+\newcommand{\FMCinitiallabeles}{Descripci\'on de la iteraci\'on inicial\ (\FMCproblem)\\[1.0ex]}
+% English version
+\newcommand{\FMCproblemlabelen}{Description of the problem\ (\FMCproblem)\\[1.0ex]}
+\newcommand{\FMCinitiallabelen}{Description of the initial iteration\ (\FMCproblem)\\[1.0ex]}
+
+% Caption of \FMCsolution
+% Spanish version
+\newcommand{\FMCfinallabeles}{Soluci\'on del problema\ (\FMCproblem)\\[1.0ex]}
+% English version
+\newcommand{\FMCfinallabelen}{Solution of the problem\ (\FMCproblem)\\[1.0ex]}
+
+% Block description format
+% Spanish version
+\newcommand{\FMCcaptiones}{\footnotesize Iteraci\'on\  \theiterationcnt:\ }
+% English version
+\newcommand{\FMCcaptionen}{\footnotesize Iteration\  \theiterationcnt:\ }
+
+%% END LANGUAGE DEFINITIONS
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% Tunable variables:
+\newcommand{\FMCref}[1]{\arabic{FMC#1cnt}}
+\newcommand{\FMClabel}[1]{%
+        \newcounter{FMC#1cnt} %
+        \setcounter{FMC#1cnt}{\theiterationcnt}%
+}
+\newcommand{\FMCproblem}{UNDEFINED}
+\newcommand{\FMCname}[1]{ \renewcommand{\FMCproblem}{#1} }
+
+\newcommand{\FMCversion}{1.12}
+
+%% Counters:
+\newcommand{\inc}[1]{\stepcounter{#1}}
+\newcommand{\dec}[1]{\addtocounter{#1}{-1}}
+\newcounter{iterationcnt}
+\setcounter{iterationcnt}{0}
+
+% Reset counter by calling \FMCinit
+\newcommand{\newFMC}{\setcounter{iterationcnt}{0}}
+
+%% Internals
+
+% Artificial markup symbol
+\newlength{\FMCspaceasymbol}
+\newcommand{\FMCasymbol}{$_{\text{a}}$}
+\settowidth{\FMCspaceasymbol}{\FMCasymbol}
+
+% Big-M markup symbol
+\newlength{\FMCspaceMsymbol}
+\newcommand{\FMCMsymbol}{$_{\text{M}}$}
+\settowidth{\FMCspaceMsymbol}{\FMCMsymbol}
+
+\newcommand{\FMCdescription}[2]{%
+% Initial problem description
+        \begin{center}%
+        \rule{\linewidth}{0.333mm}\\%
+        \FMCproblemlabel%
+        \scalebox{#1}{\includegraphics{\FMCproblem.\FMCimageformat}}\\[\FMCvspace]%
+        \input{\FMCproblem.tex}\\[\FMCvspace]%
+        {\footnotesize #2 } %
+        \rule{\linewidth}{0.333mm}%
+        \end{center}%
+}
+
+\newcommand{\FMCinit}[2]{%
+        \begin{center}%
+        \rule{\linewidth}{0.333mm}\\%
+        \setcounter{iterationcnt}{0}%
+        \FMCinitiallabel%
+        \scalebox{#1}{\includegraphics{\FMCproblem_\theiterationcnt.\FMCimageformat}}\\[\FMCvspace]%
+        \input{\FMCproblem_\theiterationcnt.tex}\\[\FMCvspace]%
+        % [moved to\FMCiter action item 5: 20/08/2009] \input{\FMCproblem_TV_\theiterationcnt.tex}\\[\FMCvspace]%
+        { %\FMCcaption
+        #2 } %
+        \rule{\linewidth}{0.333mm}%
+        \end{center}%
+}
+
+\newcommand{\FMCiter}[2]{%
+        \begin{center}%
+        \rule{\linewidth}{0.333mm}\\%
+        \inc{iterationcnt}%
+        \FMCiterlabel%
+        \dec{iterationcnt}%
+        \input{\FMCproblem_TV_\theiterationcnt.tex}\\[\FMCvspace]%
+        \inc{iterationcnt}%
+        \hfill \scalebox{#1}{\includegraphics{\FMCproblem_\theiterationcnt.\FMCimageformat}}%\FMCtblseparation
+        \hfill \scalebox{#1}{\includegraphics{\FMCproblem_\theiterationcnt a.\FMCimageformat}} \hfill \null \\[\FMCvspace]%
+        \input{\FMCproblem_\theiterationcnt.tex}\\[\FMCvspace]%
+        % [moved to\FMCiter action item 5: 20/08/2009] \input{\FMCproblem_TV_\theiterationcnt.tex}\\[\FMCvspace]%
+        {\FMCcaption #2 } %
+        \rule{\linewidth}{0.333mm}%
+        \end{center}%
+}
+
+\newcommand{\FMCsolution}[2]{%
+        \begin{center}%
+        \rule{\linewidth}{0.333mm}\\%
+        \inc{iterationcnt}%
+        \FMCfinallabel%
+        \dec{iterationcnt}%
+        \input{\FMCproblem_TV_\theiterationcnt.tex}\\[\FMCvspace]%
+        \inc{iterationcnt}%
+        \scalebox{#1}{\includegraphics{\FMCproblem_\theiterationcnt.\FMCimageformat}}\\[\FMCvspace]%
+        \input{\FMCproblem_\theiterationcnt.tex}\\[\FMCvspace]%
+        { %\FMCcaption
+        #2 } %
+        \rule{\linewidth}{0.333mm}%
+        \end{center}%
+}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+

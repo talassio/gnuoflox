@@ -1,0 +1,10 @@
+Things to do:
+
+[1] Check for redundant work in *.m files
+[2] Replace read_dimacs_min routine for a more robust one
+[3] Sync documentation
+[4] Prepare for octaveforge/fsf
+
+Whishist:
+
+1. Add a feasable solution and start iterating from it
