@@ -116,16 +116,17 @@
 %          NOTE: The switches config.FASE1 and config.BIGM are mutually exclusive and are ignored if config.sol0 is set to true.
 %
 % VERSION:
+%          1.0 RC-7 14/09/09 first public release google-code import
 %          1.0 RC-6 31/08/2009 almost ready for the public!
 %          1.0 Beta 4 Big-M 24/08/2009 <- The BIG-jiM Code!
 %          version 1.0 BETA 2 incorporates a better latex/dvi interface
 %          oflox moves to GNU oflox version 1.0 BETA +06/08/2009+
-%          1.0+second public release 03/11/2008+
-%          1.0+first public release 25/10/2008+
+%          1.0+second release 03/11/2008+
+%          1.0+first release 25/10/2008+
 %          1.0+fix 1 230908+
 %
 % DATE:
-%          18/11/2006, 03/08/2008, 26/06/2009, 06/08/2009
+%          18/11/2006, 03/08/2008, 26/06/2009, 14/09/2009
 %
 % DESCRIPTION:
 %          Simplex FMC implementation. It is not a production purpose code and it is intended for educational purpose.
@@ -140,12 +141,15 @@
 % BUGS:
 %          Please report bugs to talassio.at.gmail.dot.com
 %
-% COPIRIGHT:
+% COPYRIGHT:
 %          This software is released with the GLP version 3 license
 %
 % KUDOS:
 %          To my tutor Professor B. Feijoo
-
+%
+% CONTRIBUTORS:
+%
+%
 function [Z, flow, iter, iterF1] = oflox(
         filename,
         config = struct( % Default values follow
