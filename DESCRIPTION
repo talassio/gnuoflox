@@ -1,0 +1,11 @@
+Name: GNUOflox
+Version: 1.0.2
+Date: 2009-09-15
+Author: Andrew Sajo Castelli
+Maintainer: Andrew Sajo Castelli
+Title: Network flow teaching academic toolkit.
+Description: A toolkit for network flow teachers and students that permits the visualization of the diverse steps taken by the Simplex FMC algorithm while solving a network problem. This is not a production code package, it is an academic purpose code.
+Categories: Network Flow, Optimization, Operation Research, Teaching
+Autoload: no
+License: GPL version 3 or later
+Url: http://code.google.com/p/gnuoflox/
