@@ -1,7 +1,7 @@
 #summary Example on the usage of the GNU Oflox package
 
 = Complete Example =
-In the following example we solve the [Introduction#ExSmall same problem used in the introduction page], described by the file 
+In the following example we solve the [Introduction#Usage same problem used in the introduction page], described by the file 
 
 `~/octave/gnuoctave-1.0.2/doc/nets/pfmc300.min`
 
@@ -51,7 +51,7 @@ X =
 it =  1
 it0 =  5
 }}}
-indicating that the problem's objective optimum value is 4 units *as expected* (see the [Introduction#ExSmall Introductory page]) and can be achieved by setting each arc's flow as indicated by the vector X, it required *only* 1 Simplex FMC iterations but *6* FASE I iterations. Besides this information we note the output states
+indicating that the problem's objective optimum value is 4 units *as expected* (see the [Introduction#Usage Introductory page]) and can be achieved by setting each arc's flow as indicated by the vector X, it required *only* 1 Simplex FMC iterations but *6* FASE I iterations. Besides this information we note the output states
 
 `MO: Master output document master_fmc3.tex compiled to master_fmc3.dvi and master_fmc3.pdf`
 
