@@ -42,7 +42,6 @@ function config = ofloxconfig()
                         'show_thread'     , {false},
                         'show_depth'      , {false},
                         'compiledvi'      , {false},
-                        'motexpath'       , {'oflox_mo.tex'},
                         'it_info'         , {-1}
         );
 

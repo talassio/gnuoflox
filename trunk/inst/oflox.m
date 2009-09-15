@@ -46,7 +46,6 @@
 %                          'show_thread'     , {false},
 %                          'show_depth'      , {false},
 %                          'compiledvi'      , {false},
-%                          'motexpath'       , {'oflox_mo.tex'},
 %                          'it_info'         , {-1}
 %          )
 %
@@ -116,6 +115,7 @@
 %          NOTE: The switches config.FASE1 and config.BIGM are mutually exclusive and are ignored if config.sol0 is set to true.
 %
 % VERSION:
+%          1.0.1 15/09/2009 Moved to google-code and Octave packege inst
 %          1.0 RC-7 14/09/09 first public release google-code import
 %          1.0 RC-6 31/08/2009 almost ready for the public!
 %          1.0 Beta 4 Big-M 24/08/2009 <- The BIG-jiM Code!
@@ -126,7 +126,7 @@
 %          1.0+fix 1 230908+
 %
 % DATE:
-%          18/11/2006, 03/08/2008, 26/06/2009, 14/09/2009
+%          18/11/2006, 03/08/2008, 26/06/2009, 15/09/2009
 %
 % DESCRIPTION:
 %          Simplex FMC implementation. It is not a production purpose code and it is intended for educational purpose.
@@ -169,7 +169,6 @@ function [Z, flow, iter, iterF1] = oflox(
                         'show_thread'     , {false},
                         'show_depth'      , {false},
                         'compiledvi'      , {false},
-                        'motexpath'       , {'oflox_mo.tex'},
                         'it_info'         , {-1}
         )
 )
@@ -453,7 +452,9 @@ if ( config.latex == true ), % Post process the dot files and write master \LaTe
         warning('Using the SYSTEM call.');
 % Master \LaTeX file
         master = strcat('master_', config.aname, '.tex');
-        system(strcat('cp -v ', config.motexpath, ' ', master));
+        motexpath = which oflox;
+        motexpath = strcat(motexpath(1:(length(motexpath)-2)), '_mo.tex');
+        system(strcat('cp -v ', motexpath, ' ', master));
         [fid, message] = fopen(master, 'a');
         if (fid == -1)
                 error('Could not open master latex output file: %s', master);
