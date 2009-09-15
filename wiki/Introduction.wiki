@@ -1,0 +1,152 @@
+#summary Simplex FMC implementation with aims to academic use
+
+= Introduction =
+
+Add your content here.
+
+
+= Details =
+
+Add your content here.  Format your content with:
+  * Text in *bold* or _italic_
+  * Headings, paragraphs, and lists
+  * Automatic links to other wiki pages
+
+= Instalation =
+
+Here we will discuss how to install and load this package. First you need to grab the most recent copy of this package, *gnuoflox-x.y.z-tar.gz*, and save it to the /tmp directory.
+
+*Note:* the *x*, *y* and *z* in *gnuoflox-x.y.z-tar.gz* refer to the version numbers, for example, *gnuoflox-1.0.2-tar.gz*.
+
+== Installing the package ==
+
+To install the package open a console and follow these steps:
+    # `$ cd /tmp`
+    # `$ octave`
+    # `octave:1> pkg install gnuoflox-x.y.z-tar.gz`
+The package is now installed, but to use it, you need to preaviously load it inside Octave. 
+
+== Loading the package ==
+
+To load the package execute GNU Octave and run the following command `pkg load gnuoflox`
+The package is then loaded and ready to be used. There are now two new commands available
+  # `oflox`, and
+  # `ofloxconfig`
+these command will be explained shortly.
+
+== Removing the package ==
+
+To uninstall the package, execute GNU Octave and type the folloing command `pkg uninstall gnuoflox`. After that, the package will be removed from your system.
+
+== Upgrading to a newer version ==
+Say you have installed GNU Oflox version 1.0.1 but there is a more recent one, version 1.0.2, in order to upgrade you first need to uninstall version 1.0.1 and then install the version 1.0.2 as as described above.
+
+= Using GNU Oflox =
+Here we introduce the usage of the package through and example.
+
+== Commands available and syntax ==
+Once loaded the package in Octave, there are two commands available
+  # `oflox()`
+  # `ofloxconfig()`
+
+=== oflox ===
+This is the main command of the GNU Oflox packages, it is an implementation of the Simplex MCF, it's syntax is
+
+`[Z, X, it, it0] = oflox('filename.min', configuration);`
+
+the `oflox` command requires *only* one parameter, the file `'filename.min'` that contains the problem to be solved. Extra configuration parameters can be customized via the configuration variable. This commands returns four variables 
+
+  * `Z` the cost of the optimal solution,
+  * `X` the flows vector
+  * `it` number of iterations required to find the optimal solution
+  * `it0` number of iterations required to find a starting feasable solution in the case of using FASE I.  
+
+=== ofloxconfig ===
+This is an auxiliary command used to configure the behaviour of the `oflox` command, it's syntax is very basic:
+
+`configuration = ofloxconfig;`
+
+The command returns the oflox-config structure:
+{{{
+configuration = 
+{
+  sol0 = 0
+  FASE1 = 0
+  BIGM =  1
+  latex = 0
+  aname = noname
+  scale =  0.50000
+  lang = en
+  color_arc = #000000
+  color_l = #8D0000
+  color_u = #00C000
+  color_art = #FF6A00
+  color_thr = #AAAAFF
+  color_pot = #DA03D7
+  show_thread = 0
+  show_depth = 0
+  compiledvi = 0
+  it_info = -1
+}
+}}}
+
+Now will follow a brief description of each element of the structure:
+
+  * *config.sol0*        Boolean value indicating wether to use or not the initial feaseble
+solution defined in ``filename''. Defaults to false.
+
+  * *config.FASE1*       Boolean value indicating wether the problem should be solved using
+FASE 1 / FASE 2. Defaults to false.
+
+  * *config.BIGM*        Boolean value indicating wether the problem should be solved using Big M.
+Defaults to true.
+
+  * *config.latex*       Boolean value indicating wether to output latex code or not. Default to
+false.
+
+  * *config.compiledvi*  Boolean value indicating wether to compile to DVI and PDF the \LaTeX
+generated source. This switch is only relevant is config.latex is true.
+
+  * *config.aname*       String specifying the latex output file pattern. Default to 'noname'.
+
+  * *config.scale*       float specifying the scale factor of the dot generated graphs used by
+\includegraphics[scale=0.5]{...}. This switch is only used if
+config.latex is true. Default to '0.5'.
+
+  * *config.lang*        Two coded caracters specifying the latex output language. Languages
+currently supported are:
+English ``en'' (default)
+Spanish ``es''
+
+  * *config.color_arc*   The color of the arcs in HTML coded color. Defaults to black (#000000).
+
+  * *config.color_l*     The color of arcs in lower bound in HTML coded color. Defaults to
+red (#8D0000).
+
+  * *config.color_u*     The color of arcs in upper bound in HTML coded color. Defaults to
+green (#00C000).
+
+  * *config.color_art*   The color of artificial arcs in HTML coded color. Defaults to
+orange (#FF6A00).
+
+  * *config.color_thr*   The color of the THREAD array (when displayed by config.show_thread=true).
+Default to blue (#AAAAFF).
+
+  * *config.color_pot*   The color of the arcs that enters and leaves the tree on the same iteration.
+Defaults to magenta (#DA03D7).
+
+  * *config.show_thread* Boolean value specifying wether to display the thread array on the tree
+graph. Defaults to false.
+
+  * *config.show_depth*  Boolean value specifying wether to display the depth array on the tree graph.
+Defaults to false.
+
+  * *config.motexpath*   String indicating the path to the oflox_mo.tex file, you can change it to
+use your own MO \LaTeX definitions, defaults to:
+'<octave library/gnuoflox>/oflox_mo.tex'
+
+  * *config.it_info*     This switch indicates that the information of a specific iteration is desired.
+The iteration information is displayed in DIMACS min extended format ready to
+be included in a DIMACS min extended file. Once displayed the information the
+iterations are stopped. If the value is less than 0 then no information is
+displayed. Defaults to -1.
