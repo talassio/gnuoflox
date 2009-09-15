@@ -28,7 +28,10 @@ The package is now installed, but to use it, you need to preaviously load it ins
 
 == Loading the package ==
 
-To load the package execute GNU Octave and run the following command `pkg load gnuoflox`
+To load the package execute GNU Octave and run the following command 
+
+`pkg load gnuoflox`
+
 The package is then loaded and ready to be used. There are now two new commands available
   # `oflox`, and
   # `ofloxconfig`
@@ -36,7 +39,11 @@ these command will be explained shortly.
 
 == Removing the package ==
 
-To uninstall the package, execute GNU Octave and type the folloing command `pkg uninstall gnuoflox`. After that, the package will be removed from your system.
+To uninstall the package, execute GNU Octave and type the folloing command 
+
+`pkg uninstall gnuoflox`
+
+After that, the package will be removed from your system.
 
 == Upgrading to a newer version ==
 Say you have installed GNU Oflox version 1.0.1 but there is a more recent one, version 1.0.2, in order to upgrade you first need to uninstall version 1.0.1 and then install the version 1.0.2 as as described above.
@@ -92,61 +99,113 @@ configuration =
 
 Now will follow a brief description of each element of the structure:
 
-  * *config.sol0*        Boolean value indicating wether to use or not the initial feaseble
-solution defined in ``filename''. Defaults to false.
+  * *configuration.sol0*        Boolean value indicating wether to use or not the initial feaseble solution defined in ``filename''. Defaults to false.
+  * *configuration.FASE1*       Boolean value indicating wether the problem should be solved using FASE 1 / FASE 2. Defaults to false.
+  * *configuration.BIGM*        Boolean value indicating wether the problem should be solved using Big M. Defaults to true.
+  * *configuration.latex*       Boolean value indicating wether to output latex code or not. Default to false.
+  * *configuration.compiledvi*  Boolean value indicating wether to compile to DVI and PDF the \LaTeX generated source. This switch is only relevant is configuration.latex is true.
+  * *configuration.aname*       String specifying the latex output file pattern. Default to 'noname'.
+  * *configuration.scale*       float specifying the scale factor of the dot generated graphs used by `\includegraphics[scale=0.5]{...}`. This switch is only used if configuration.latex is true. Default to '0.5'.
+  * *configuration.lang*        Two coded caracters specifying the latex output language. Languages currently supported are:
+    * English ``en'' (default)
+    * Spanish ``es''
+  * *configuration.color_arc*   The color of the arcs in HTML coded color. Defaults to black (#000000).
+  * *configuration.color_l*     The color of arcs in lower bound in HTML coded color. Defaults to red (#8D0000).
+  * *configuration.color_u*     The color of arcs in upper bound in HTML coded color. Defaults to green (#00C000).
+  * *configuration.color_art*   The color of artificial arcs in HTML coded color. Defaults to orange (#FF6A00).
+  * *configuration.color_thr*   The color of the THREAD array (when displayed by configuration.show_thread=true). Default to blue (#AAAAFF).
+  * *configuration.color_pot*   The color of the arcs that enters and leaves the tree on the same iteration. Defaults to magenta (#DA03D7).
+  * *configuration.show_thread* Boolean value specifying wether to display the thread array on the tree graph. Defaults to false.
+  * *configuration.show_depth*  Boolean value specifying wether to display the depth array on the tree graph. Defaults to false.
+  * *configuration.it_info*     This switch indicates that the information of a specific iteration is desired. The iteration information is displayed in DIMACS min extended format ready to be included in a DIMACS min extended file. Once displayed the information the iterations are stopped. If the value is less than 0 then no information is displayed. Defaults to -1.
 
-  * *config.FASE1*       Boolean value indicating wether the problem should be solved using
-FASE 1 / FASE 2. Defaults to false.
+== Usage ==
+For starters, let solve a simple network that is provided with the package. The network is described in DIMACS Challenge MIN format in the file
 
-  * *config.BIGM*        Boolean value indicating wether the problem should be solved using Big M.
-Defaults to true.
+`~/octave/gnuoflox-x.y.z/doc/nets/pfmc300.min`
 
-  * *config.latex*       Boolean value indicating wether to output latex code or not. Default to
-false.
+Start Octave and write:
 
-  * *config.compiledvi*  Boolean value indicating wether to compile to DVI and PDF the \LaTeX
-generated source. This switch is only relevant is config.latex is true.
+`pkg load gnuoflox`
+In order to load the GNU Oflox package
 
-  * *config.aname*       String specifying the latex output file pattern. Default to 'noname'.
+`[ Z X it it0 ] = oflox("~/octave/gnuoflox-x.y.z/doc/nets/pfmc300.min")`
+To start solving the problem, after solving it, the result is
+{{{
+Z =  4
+X =
 
-  * *config.scale*       float specifying the scale factor of the dot generated graphs used by
-\includegraphics[scale=0.5]{...}. This switch is only used if
-config.latex is true. Default to '0.5'.
+   0
+   3
+   1
+   1
+   4
+   3
+   4
+   3
 
-  * *config.lang*        Two coded caracters specifying the latex output language. Languages
-currently supported are:
-English ``en'' (default)
-Spanish ``es''
+it =  6
+it0 = 0
+}}}
+indicating that the problem's objective optimum value is 4 units and can be achieved by setting each arc's flow as indicated by the vector X and required 6 Simplex FMC iterations and 0 FASE I iterations (this is because the problem was solved using Big-M method).
 
-  * *config.color_arc*   The color of the arcs in HTML coded color. Defaults to black (#000000).
 
-  * *config.color_l*     The color of arcs in lower bound in HTML coded color. Defaults to
-red (#8D0000).
+Now that we are experts using GNU oflox, let's use some more advanced features. In the following example we solve the same problem as before but using FASE I/II and setting the output to a PDF file showing the initial problem, the steps involved and the optimum solution.
 
-  * *config.color_u*     The color of arcs in upper bound in HTML coded color. Defaults to
-green (#00C000).
+Start up octave and load the package, then type
 
-  * *config.color_art*   The color of artificial arcs in HTML coded color. Defaults to
-orange (#FF6A00).
+`config = ofloxconfig;`
 
-  * *config.color_thr*   The color of the THREAD array (when displayed by config.show_thread=true).
-Default to blue (#AAAAFF).
+enable FASE I/II and disable Big-M methods
+  * `config.FASE1 = true;`
+  * `config.BIGM = false;`
+enable the \LaTeX output
+  * `config.latex = true;`
+  * `config.compiledvi = true;`
 
-  * *config.color_pot*   The color of the arcs that enters and leaves the tree on the same iteration.
-Defaults to magenta (#DA03D7).
+and finally, set a name for the problem to solve
+  * `config.aname = 'fmc3';`
 
-  * *config.show_thread* Boolean value specifying wether to display the thread array on the tree
-graph. Defaults to false.
+Now we are ready to solve the problem!
+{{{
+octave:1> [Z X it, it0] = oflox('~/octave/gnuoflox-1.0.1/doc/nets/pfmc300.min', config)
+file is DIMACS MIN FORMAT
+file is DIMACS MIN FORMAT read OK.
+warning: Degenerated iteration detected. The flows don't change.
+warning: Degenerated iteration detected. The flows don't change.
+warning: Using the SYSTEM call.
+`/home/andres/octave/gnuoflox-1.0.1/oflox_mo.tex' -> `master_fmc3.tex'
+This is pdfTeXk, Version 3.141592-1.40.3 (Web2C 7.5.6)
+...
+Output written on master_fmc3.dvi (11 pages, 41464 bytes).
+Transcript written on master_fmc3.log.
+MO: Master output document master_fmc3.tex compiled to master_fmc3.dvi and master_fmc3.pdf
+Z =  4
+X =
 
-  * *config.show_depth*  Boolean value specifying wether to display the depth array on the tree graph.
-Defaults to false.
+   0
+   3
+   1
+   1
+   4
+   3
+   4
+   3
 
-  * *config.motexpath*   String indicating the path to the oflox_mo.tex file, you can change it to
-use your own MO \LaTeX definitions, defaults to:
-'<octave library/gnuoflox>/oflox_mo.tex'
+it =  1
+it0 =  5
+}}}
+indicating that the problem's objective optimum value is 4 units *as expected* and can be achieved by setting each arc's flow as indicated by the vector X, it required *only* 1 Simplex FMC iterations but *6* FASE I iterations. Besides this information we note the output states
 
-  * *config.it_info*     This switch indicates that the information of a specific iteration is desired.
-The iteration information is displayed in DIMACS min extended format ready to
-be included in a DIMACS min extended file. Once displayed the information the
-iterations are stopped. If the value is less than 0 then no information is
-displayed. Defaults to -1.
+`MO: Master output document master_fmc3.tex compiled to master_fmc3.dvi and master_fmc3.pdf`
+
+indicating the output was written to `master_fmc3.pdf` and `master_fmc3.dvi`. if we look at the contents of the current working directory we note there are some new files, namely
+41 new files
+|| F1-fmc3_0.ps  ||  F1-fmc3_2.tex  || F1-fmc3_5a.ps     || F1-fmc3_TV_2.tex  || fmc3_1.ps      || fmc3_TV_1.tex   ||
+|| F1-fmc3_0.tex ||  F1-fmc3_3a.ps  || F1-fmc3_5.ps      || F1-fmc3_TV_3.tex  || fmc3_1.tex     || master_fmc3.aux ||
+|| F1-fmc3_1a.ps ||  F1-fmc3_3.ps   || F1-fmc3_5.tex     || F1-fmc3_TV_4.tex  || fmc3_2.ps      || *master_fmc3.dvi* ||
+|| F1-fmc3_1.ps  ||  F1-fmc3_3.tex  || F1-fmc3_6.ps      || F1-fmc3_TV_5.tex  || fmc3_2.tex     || master_fmc3.log ||
+|| F1-fmc3_1.tex ||  F1-fmc3_4a.ps  || F1-fmc3_6.tex     || fmc3_0.ps         || fmc3.ps        || *master_fmc3.pdf* ||
+|| F1-fmc3_2a.ps ||  F1-fmc3_4.ps   || F1-fmc3_TV_0.tex  || fmc3_0.tex        || fmc3.tex       || master_fmc3.tex ||
+|| F1-fmc3_2.ps  ||  F1-fmc3_4.tex  || F1-fmc3_TV_1.tex  || fmc3_1a.ps        || fmc3_TV_0.tex  ||                 ||
+but for now the *only* file we are interested is *master_fmc3.pdf*, go ahead and open it in your favourite PDF viewer and look at it's contents.
