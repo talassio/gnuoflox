@@ -101,10 +101,6 @@
 %          config.show_depth:  Boolean value specifying wether to display the depth array on the tree graph.
 %                              Defaults to false.
 %
-%          config.motexpath:   String indicating the path to the oflox_mo.tex file, you can change it to
-%                              use your own MO \LaTeX definitions, defaults to:
-%                                 '<octave library/gnuoflox>/oflox_mo.tex'
-%
 %          config.it_info:     This switch indicates that the information of a specific iteration is desired.
 %                              The iteration information is displayed in DIMACS min extended format ready to
 %                              be included in a DIMACS min extended file. Once displayed the information the
