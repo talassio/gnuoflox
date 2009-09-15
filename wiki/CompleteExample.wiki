@@ -8,10 +8,21 @@ In the following example we solve the [Introduction#Usage same problem used in t
 but using FASE I/II and setting the output to a PDF file showing the initial problem, the steps involved and the optimum solution.
 
 = Details =
-Start up octave and load the package, then type
+[http://code.google.com/u/talassio/ I] strongly sugest to open a new folder for each problem to solve, so let's start off by opening the console, creating a new folder named `fmc3` and moving in to it
+
+`cd ~`
+
+`mkdir fmc3 && cd fmc3` 
+
+Start up octave and load the package,
+
+`octave:1> pkg load gnuoflox` 
+
+then type
 
 `config = ofloxconfig;`
 
+in order to customize the diverse settings. Let's 
 enable FASE I/II and disable Big-M methods
   * `config.FASE1 = true;`
   * `config.BIGM = false;`
