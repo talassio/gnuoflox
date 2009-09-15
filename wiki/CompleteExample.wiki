@@ -76,3 +76,7 @@ indicating the output was written to `[http://gnuoflox.googlecode.com/files/mast
 || F1-fmc3_2a.ps ||  F1-fmc3_4.ps   || F1-fmc3_TV_0.tex  || fmc3_0.tex        || fmc3.tex       || master_fmc3.tex ||
 || F1-fmc3_2.ps  ||  F1-fmc3_4.tex  || F1-fmc3_TV_1.tex  || fmc3_1a.ps        || fmc3_TV_0.tex  ||                 ||
 but for now the *only* file we are interested is *[http://gnuoflox.googlecode.com/files/master_fmc3.pdf master_fmc3.pdf]*, go ahead and open it in your favourite PDF viewer and look at it's contents.
+
+Most of the files listed in the above table are the \LaTeX source files to generate master_fmc3.pdf, the can be view and edited. The most important file is master_fmc3.tex that is the one that includes all the other TeX source files, you are encouraged to view, edit and explore all the source files!
+
+The folloing images show some pages of the PDF output (Click on them to enlarge)
