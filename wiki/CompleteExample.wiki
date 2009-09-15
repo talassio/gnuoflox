@@ -1,6 +1,6 @@
-#summary Example on the usage of the GNU Oflox package
+#summary An example on the usage of the GNU Oflox package
 
-= Complete Example =
+= A Complete Example =
 In the following example we solve the [Introduction#Usage same problem used in the introduction page], described by the file 
 
 `~/octave/gnuoctave-1.0.2/doc/nets/pfmc300.min`
