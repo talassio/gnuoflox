@@ -1,7 +1,7 @@
 #summary A simple example on the usage of the GNU Oflox package
 #sidebar SideBarGlobal
 
-= A Complete Example =
+= A simple example =
 
 In the following example we solve the [Introduction#Usage same problem used in the introduction page], described by the file 
 
