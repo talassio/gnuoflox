@@ -67,9 +67,9 @@ Once loaded the package in Octave, there are two commands available
 === oflox ===
 This is the main command of the GNU Oflox packages, it is an implementation of the Simplex MCF, it's syntax is
 
-`[Z, X, it, it0] = oflox('filename.min', configuration);`
+`[Z, X, it, it0] = oflox(filename, configuration);`
 
-the `oflox` command requires *only* one parameter, the file `'filename.min'` that contains the problem to be solved in [http://lpsolve.sourceforge.net/5.5/DIMACS.htm DIMACS Challenge MIN format]. Extra configuration parameters can be customized via the configuration variable. This commands returns four variables 
+the `oflox` command requires *only* one parameter, `filename`, the variable specifying the path to `filename.min` that contains the problem (network) to be solved in [http://lpsolve.sourceforge.net/5.5/DIMACS.htm DIMACS Challenge MIN format]. Extra configuration parameters can be customized via the configuration variable. This commands returns four variables 
 
   * `Z` the cost of the optimal solution,
   * `X` the flows vector
