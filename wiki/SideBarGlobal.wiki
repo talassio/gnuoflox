@@ -3,4 +3,4 @@
   * [Introduction Introduction]
   * [CompleteExample A Simple Example]
   * [Examples More Examples]
-  * [Dcemf DIMACS Challenge Min Extended Format]
+  * [Dcmef DIMACS Challenge Min Extended Format]
