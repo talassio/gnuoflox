@@ -1,4 +1,4 @@
-#summary An example on the usage of the GNU Oflox package
+#summary A simple example on the usage of the GNU Oflox package
 #sidebar SideBarGlobal
 
 = A Complete Example =
