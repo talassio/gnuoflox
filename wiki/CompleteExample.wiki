@@ -83,7 +83,7 @@ indicating the output was written to [http://gnuoflox.googlecode.com/files/maste
 
 but for now the *only* file we are interested is *[http://gnuoflox.googlecode.com/files/master_fmc3.pdf master_fmc3.pdf]*, go ahead and open it in your favourite PDF viewer and look at it's contents.
 
-Most of the files listed in the above table are the \LaTeX source files to generate master_fmc3.pdf, the can be view and edited. The most important file is master_fmc3.tex that is the one that includes all the other TeX source files, you are encouraged to view, edit and explore all the source files!
+Most of the files listed in the above table are the LaTeX source files to generate master_fmc3.pdf, they can be viewed and edited. The most important file is master_fmc3.tex that is the one that includes all the other TeX source and PS graphic files, you are encouraged to view, edit and explore all the source files!
 
 The folloing images show some pages of the PDF output (Click on them to enlarge)
 
