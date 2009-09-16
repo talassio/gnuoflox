@@ -1,4 +1,5 @@
 #summary Some introductory notes on the GNU Oflox package
+#labels Featured,Phase-Requirements
 
 = Introduction =
 
@@ -7,10 +8,12 @@ Add your content here.
 
 = Details =
 
-Add your content here.  Format your content with:
-  * Text in *bold* or _italic_
-  * Headings, paragraphs, and lists
-  * Automatic links to other wiki pages
+In order for GNU Oflox to work properly, it requires
+  * GNU Octave 2.0 or higher 
+  * A GNU/Linux compatible Operating System
+  * A mighty *[http://www.ctan.org/ LaTeX]* distribution (for the commands *latex* and *dvipdf*)
+  * The powerful *dot* program from [http://www.graphviz.org/ graphviz]
+
 
 = Instalation =
 
