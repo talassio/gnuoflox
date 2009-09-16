@@ -1,6 +1,8 @@
 #summary Some introductory notes on the GNU Oflox package
 #labels Featured,Phase-Requirements
 
+#sidebar SideBarGlobal
+
 = Introduction =
 
 Add your content here.
