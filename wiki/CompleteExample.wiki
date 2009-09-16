@@ -68,8 +68,8 @@ indicating that the problem's objective optimum value is 4 units *as expected* (
 
 `MO: Master output document master_fmc3.tex compiled to master_fmc3.dvi and master_fmc3.pdf`
 
-indicating the output was written to [http://gnuoflox.googlecode.com/files/master_fmc3.pdf master_fmc3.pdf] and `master_fmc3.dvi`. if we look at the contents of the current working directory we note there are some new files, namely
-41 new files
+indicating the output was written to [http://gnuoflox.googlecode.com/files/master_fmc3.pdf master_fmc3.pdf] and `master_fmc3.dvi`. if we look at the contents of the current working directory we note there are some 41 new files, namely
+
 
 
 || F1-fmc3_0.ps  ||  F1-fmc3_2.tex  || F1-fmc3_5a.ps     || F1-fmc3_TV_2.tex  || fmc3_1.ps      || fmc3_TV_1.tex   ||
