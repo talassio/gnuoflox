@@ -1,9 +1,9 @@
-#summary List of examples
+#summary Screen shots and examples
 #labels Featured
 #sidebar SideBarGlobal
 
 = Screen shots = 
-The following screen shot sequence shows a tipical steps involved while solving a Minimum Cost Flow network problem, in this case, the [http://gnuoflox.googlecode.com/files/pfmcexx1.min PFMCEXX1] problem!
+The following screen shot sequence shows the tipical steps involved while solving a [http://en.wikipedia.org/wiki/Minimum_cost_flow Minimum Cost Flow network problem], in this case, the [http://gnuoflox.googlecode.com/files/pfmcexx1.min PFMCEXX1] problem!
 
 Click an image to enlarge
 
