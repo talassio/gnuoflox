@@ -2,3 +2,9 @@
   * [CompleteExample An Example]
   * [Examples More Examples]
   * [Dcemf The DIMACS Challenge Extended Min File Format]
+
+----
+
+Table of Contents
+
+<wiki:toc max_depth="2" />
