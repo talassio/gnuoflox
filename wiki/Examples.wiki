@@ -1,0 +1,12 @@
+#summary List of examples
+#labels Featured
+#sidebar SideBarGlobal
+
+In this page you can find a list of problems (networks) and the steps followed by the Simplex FMC to solve them. The solutions are displayed in PDF format.
+
+|| *Problem Name* || *Description* || *Problem File* || *Solution* || *Uses Extended Format?* || *Shiped in Package?* ||
+|| PFMCEXX1     || Very basic network of 4 nodes and 5 arcs. Problem solved with Fase I/II and displaying the Thread array in light red ||  [Linked MIN] || [Linked PDF] || no || yes||
+|| PFMC100      || Simple network of 6 nodes and 10 arcs. Solved with Fase I/II|| [Linked MIN] || [Linked PDF] || yes || yes||
+|| PFMC200      || Another simple network of 6 nodes and 10 arcs. Solved with Big-M showing the THREAD array in blue || [Linked MIN] || [Linked PDF] || no || yes||
+|| PFMC300      || Simple network of 5 nodes and 8 arcs. Solved with Big-M || [Linked MIN] || [Linked PDF] || no || yes||
+|| PFMC301      || A variation of problem PFM300 using infinite upperbound on some arcs. Solved with Fase I/II and showing the TREAD array || [Linked MIN] || [Linked PDF] || no || yes||
