@@ -84,4 +84,4 @@ Most of the files listed in the above table are the \LaTeX source files to gener
 The folloing images show some pages of the PDF output (Click on them to enlarge)
 
 || [http://gnuoflox.googlecode.com/files/master_fmc3-0.png http://gnuoflox.googlecode.com/files/master_fmc3-0-small.png] || [http://gnuoflox.googlecode.com/files/master_fmc3-2.png http://gnuoflox.googlecode.com/files/master_fmc3-2-small.png]|| [http://gnuoflox.googlecode.com/files/master_fmc3-9.png http://gnuoflox.googlecode.com/files/master_fmc3-9-small.png]|| [http://gnuoflox.googlecode.com/files/master_fmc3-10.png http://gnuoflox.googlecode.com/files/master_fmc3-10-small.png] ||
-||The problem || Iteration 1/6 of FASE I || Iteration 1 of FASE II || The solution ||
+||The problem || Iteration 1/6 of FASE I || Iteration 1/1 of FASE II || The solution ||
