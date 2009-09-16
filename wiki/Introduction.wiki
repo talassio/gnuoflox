@@ -106,26 +106,26 @@ configuration =
 }}}
 
 Now will follow a brief description of each element of the structure:
-
-  * *configuration.sol0*        Boolean value indicating wether to use or not the initial feaseble solution defined in ``filename''. Defaults to false.
-  * *configuration.FASE1*       Boolean value indicating wether the problem should be solved using FASE 1 / FASE 2. Defaults to false.
-  * *configuration.BIGM*        Boolean value indicating wether the problem should be solved using Big M. Defaults to true.
-  * *configuration.latex*       Boolean value indicating wether to output latex code or not. Default to false.
-  * *configuration.compiledvi*  Boolean value indicating wether to compile to DVI and PDF the \LaTeX generated source. This switch is only relevant is configuration.latex is true.
-  * *configuration.aname*       String specifying the latex output file pattern. Default to 'noname'.
-  * *configuration.scale*       float specifying the scale factor of the dot generated graphs used by `\includegraphics[scale=0.5]{...}`. This switch is only used if configuration.latex is true. Default to '0.5'.
-  * *configuration.lang*        Two coded caracters specifying the latex output language. Languages currently supported are:
-    * English ``en'' (default)
-    * Spanish ``es''
-  * *configuration.color_arc*   The color of the arcs in HTML coded color. Defaults to black (#000000).
-  * *configuration.color_l*     The color of arcs in lower bound in HTML coded color. Defaults to red (#8D0000).
-  * *configuration.color_u*     The color of arcs in upper bound in HTML coded color. Defaults to green (#00C000).
-  * *configuration.color_art*   The color of artificial arcs in HTML coded color. Defaults to orange (#FF6A00).
-  * *configuration.color_thr*   The color of the THREAD array (when displayed by configuration.show_thread=true). Default to blue (#AAAAFF).
-  * *configuration.color_pot*   The color of the arcs that enters and leaves the tree on the same iteration. Defaults to magenta (#DA03D7).
-  * *configuration.show_thread* Boolean value specifying wether to display the thread array on the tree graph. Defaults to false.
-  * *configuration.show_depth*  Boolean value specifying wether to display the depth array on the tree graph. Defaults to false.
-  * *configuration.it_info*     This switch indicates that the information of a specific iteration is desired. The iteration information is displayed in DIMACS min extended format ready to be included in a DIMACS min extended file. Once displayed the information the iterations are stopped. If the value is less than 0 then no information is displayed. Defaults to -1.
+|| *Element* || *Description* ||
+|| *configuration.sol0*  ||    Boolean value indicating wether to use or not the initial feaseble solution defined in ``filename''. Defaults to false.||
+|| *configuration.FASE1* ||    Boolean value indicating wether the problem should be solved using FASE 1 / FASE 2. Defaults to false.||
+|| *configuration.BIGM*  ||    Boolean value indicating wether the problem should be solved using Big M. Defaults to true.||
+|| *configuration.latex* ||    Boolean value indicating wether to output latex code or not. Default to false.||
+|| *configuration.compiledvi* || Boolean value indicating wether to compile to DVI and PDF the \LaTeX generated source. This switch is only relevant is configuration.latex is true.||
+|| *configuration.aname* ||    String specifying the latex output file pattern. Default to 'noname'.||
+|| *configuration.scale* ||    float specifying the scale factor of the dot generated graphs used by `\includegraphics[scale=0.5]{...}`. This switch is only used if configuration.latex is true. Default to '0.5'.||
+|| *configuration.lang* ||     Two coded caracters specifying the latex output language. Languages currently supported are:||
+|| ||      English ``en'' (default)||
+|| ||      Spanish ``es''||
+|| *configuration.color_arc* || The color of the arcs in HTML coded color. Defaults to black (#000000).||
+|| *configuration.color_l*  || The color of arcs in lower bound in HTML coded color. Defaults to red (#8D0000).||
+|| *configuration.color_u* ||  The color of arcs in upper bound in HTML coded color. Defaults to green (#00C000).||
+|| *configuration.color_art* || The color of artificial arcs in HTML coded color. Defaults to orange (#FF6A00).||
+|| *configuration.color_thr* || The color of the THREAD array (when displayed by configuration.show_thread=true). Default to blue (#AAAAFF).||
+|| *configuration.color_pot* || The color of the arcs that enters and leaves the tree on the same iteration. Defaults to magenta (#DA03D7).||
+|| *configuration.show_thread* || Boolean value specifying wether to display the thread array on the tree graph. Defaults to false.||
+|| *configuration.show_depth* || Boolean value specifying wether to display the depth array on the tree graph. Defaults to false.||
+|| *configuration.it_info* ||  This switch indicates that the information of a specific iteration is desired. The iteration information is displayed in DIMACS min extended format ready to be included in a DIMACS min extended file. Once displayed the information the iterations are stopped. If the value is less than 0 then no information is displayed. Defaults to -1.||
 
 == Usage ==
 For starters, let solve a simple network that is provided with the package. The network is described in [http://lpsolve.sourceforge.net/5.5/DIMACS.htm DIMACS Challenge MIN format] in the file
