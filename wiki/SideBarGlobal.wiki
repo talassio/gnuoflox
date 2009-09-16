@@ -1,5 +1,3 @@
-#sidebar AndAndAnd
-
   * [Introduction Introduction]
   * [CompleteExample An Example]
   * [Examples More Examples]
