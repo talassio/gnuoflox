@@ -2,11 +2,20 @@
 #labels Featured
 #sidebar SideBarGlobal
 
+= Screen shots = 
+
+Click an image to enlarge
+
+|| image || image || image || image ||
+|| The problem || Octave while solving || Output page 1/2 || output page 2/2 ||
+
+ 
+= List of examples =
 In this page you can find a list of problems (networks) and the steps followed by the Simplex FMC to solve them. The solutions are displayed in PDF format.
 
 || *Problem Name* || *Description* || *Problem File* || *Solution* || *Uses Extended Format?* || *Shiped in Package?* ||
-|| PFMCEXX1     || Very basic network of 4 nodes and 5 arcs. Problem solved with Fase I/II and displaying the Thread array in light red ||  [Linked http://gnuoflox.googlecode.com/files/text-48px.png] || [Linked PDF] || no || yes||
-|| PFMC100      || Simple network of 6 nodes and 10 arcs. Solved with Fase I/II|| [Linked http://gnuoflox.googlecode.com/files/text-48px.png] || [Linked PDF] || yes || yes||
-|| PFMC200      || Another simple network of 6 nodes and 10 arcs. Solved with Big-M showing the THREAD array in blue || [Linked http://gnuoflox.googlecode.com/files/text-48px.png] || [Linked PDF] || no || yes||
-|| PFMC300      || Simple network of 5 nodes and 8 arcs. Solved with Big-M || [Linked http://gnuoflox.googlecode.com/files/text-48px.png] || [Linked PDF] || no || yes||
-|| PFMC301      || A variation of problem PFM300 using infinite upperbound on some arcs. Solved with Fase I/II and showing the TREAD array || [Linked http://gnuoflox.googlecode.com/files/text-48px.png] || [Linked PDF] || no || yes||
+|| PFMCEXX1     || Very basic network of 4 nodes and 5 arcs. Problem solved with Fase I/II and displaying the Thread array in light red ||  [http://gnuoflox.googlecode.com/files/pfmcexx1.min http://gnuoflox.googlecode.com/files/text-48px.png] || [http://gnuoflox.googlecode.com/files/master_pfmcexx1.pdf http://gnuoflox.googlecode.com/files/pdf-48px.png] || no || yes||
+|| PFMC100      || Simple network of 6 nodes and 10 arcs. Solved with Fase I/II|| [http://gnuoflox.googlecode.com/files/pfmc100.min http://gnuoflox.googlecode.com/files/text-48px.png] || [Linked http://gnuoflox.googlecode.com/files/pdf-48px.png] || yes || yes||
+|| PFMC200      || Another simple network of 6 nodes and 10 arcs. Solved with Big-M showing the THREAD array in blue || [http://gnuoflox.googlecode.com/files/pfmc200.min http://gnuoflox.googlecode.com/files/text-48px.png] || [Linked http://gnuoflox.googlecode.com/files/pdf-48px.png] || no || yes||
+|| PFMC300      || Simple network of 5 nodes and 8 arcs. Solved with Big-M || [http://gnuoflox.googlecode.com/files/pfmc300.min http://gnuoflox.googlecode.com/files/text-48px.png] || [Linked http://gnuoflox.googlecode.com/files/pdf-48px.png] || no || yes||
+|| PFMC301      || A variation of problem PFM300 using infinite upperbound on some arcs. Solved with Fase I/II and showing the TREAD array || [http://gnuoflox.googlecode.com/files/pfmc301.min http://gnuoflox.googlecode.com/files/text-48px.png] || [Linked http://gnuoflox.googlecode.com/files/pdf-48px.png] || no || yes||
