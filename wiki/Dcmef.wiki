@@ -9,3 +9,5 @@ DIMACS
 = Details =
 
 File format description
+
+Shigoto
