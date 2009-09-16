@@ -80,3 +80,6 @@ but for now the *only* file we are interested is *[http://gnuoflox.googlecode.co
 Most of the files listed in the above table are the \LaTeX source files to generate master_fmc3.pdf, the can be view and edited. The most important file is master_fmc3.tex that is the one that includes all the other TeX source files, you are encouraged to view, edit and explore all the source files!
 
 The folloing images show some pages of the PDF output (Click on them to enlarge)
+
+|| http://gnuoflox.googlecode.com/files/ || || 
+||The problem || The solution || Iteration 1 of FASE I || Iteration 1 of FASE II ||
