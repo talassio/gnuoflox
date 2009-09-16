@@ -1,3 +1,4 @@
+#summary The side bar
 === Site Navigation ===
   * [Introduction Introduction]
   * [CompleteExample A Simple Example]
