@@ -1,0 +1,11 @@
+#summary Description of the DIMACS Challenge Min Extended file format
+
+= Introduction =
+
+DIMACS
+
+= MIN or MIN Extended = 
+
+= Details =
+
+File format description
