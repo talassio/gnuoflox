@@ -128,7 +128,7 @@
 %          Simplex FMC implementation. It is not a production purpose code and it is intended for educational purpose.
 %
 % AUTHOR:
-%          Andrew Sajo, http://www.google.com/talassio
+%          Andrew Sajo, http://code.google.com/p/gnuoflox/
 %          Universidad Simón Bolívar
 %          Coordinación de Matematicas
 %          Departamento de Cómputo Científico y Estadística
