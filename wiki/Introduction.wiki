@@ -18,7 +18,7 @@ In order for GNU Oflox to work properly, it requires
   * The powerful *dot* program from [http://www.graphviz.org/ graphviz]
 
 = Networks =
-The problems (networks) to be solved are specified in [Dcmef DIMACS Challenge Min Extended format, for more information on this topic clic here.] 
+The problems (networks) to be solved are specified in DIMACS Challenge Min format, with a few extensions, [Dcmef for more information on this topic clic here.] 
 
 = Instalation =
 
