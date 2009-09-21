@@ -1,4 +1,4 @@
-#summary Windows relatex topics
+#summary Windows related topics
 #labels Phase-Design
 #sidebar SideBarGlobal
 = Going Backwards: Running GNU OFlox under MS Windows =
