@@ -1,0 +1,6 @@
+#summary Windows relatex topics
+#labels Phase-Design
+#sidebar SideBarGlobal
+= Going Backwards: Running GNU OFlox under MS Windows =
+
+This section describes the steps needed to make GNU Oflox work under MS Windows XP
