@@ -10,7 +10,12 @@ This section covers the necesary steps to make GNU Oflox work under MS Windows X
 The folloing software is required (tested version):
 
  * [http://octave.sourceforge.net/ GNU Octave windows version from OctaveForge] (Version 3.2.2)
- * [http://miktex.org/ MikTeX distribution] (Version 2.8)
+ * [http://miktex.org/ MikTeX distribution] (Version 2.8), after instalation, make *sure* you download the folloing extra latex packages
+   * xcolor
+   * graphics
+   * geometry
+   * amsfonts
+   * amsmath 
  * [http://www.graphviz.org/Download_windows.php Graphviz program] (Version 2.24.0)
 
 Install all three of these programs and make sure the can be accessible via the CMD.EXE console program, that is,
