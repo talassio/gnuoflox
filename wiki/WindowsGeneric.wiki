@@ -49,7 +49,7 @@ which should say
 `TeX is a trademark of the American Mathematical Society.`
 
 == Installing the GNU Oflox Package ==
-Download from [http://code.google.com/p/gnuoflox/downloads/list here] the latest package file and save it on your Desktop.
+Download from [http://code.google.com/p/gnuoflox/downloads/list here] the latest gnuoflox-x.y.z-tar.gz package file and save it on your Desktop.
 
 To install the GNU Oflox package, open GNU Octave and on the prompt type:
 
@@ -59,4 +59,29 @@ To install the GNU Oflox package, open GNU Octave and on the prompt type:
 
 `octave-3.2.2.exe:2:~\Desktop`
 
-`> pkg install gnuoflox-x.y.z-tar'`
+`> pkg install gnuoflox-x.y.z-tar.gz'`
+
+== Loading and Using it ==
+Before using the `oflox()` function, you need to first load the package, on the GNU Octave console type:
+
+`octave-3.2.2.exe:3:~\Desktop`
+
+`> pkg load gnuoflox`
+
+and now we con use it! Lets give it a try
+
+== Step by Step Example ==
+
+`octave-3.2.2.exe:4:~\Desktop`
+
+`> conf = ofloxconfig`
+
+`octave-3.2.2.exe:5:~\Desktop`
+
+`> conf.latex = 1; conf.compiledvi = 1;
+
+We are now ready to solve a problem, the package includes a few simple problems, lets solve one of them
+
+`octave-3.2.2.exe:6:~\Desktop`
+
+`> [ Z X it it0 ] = oflox('', conf);`
