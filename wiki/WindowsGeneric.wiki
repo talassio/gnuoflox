@@ -1,6 +1,38 @@
 #summary Windows related topics
 #labels Phase-Design
 #sidebar SideBarGlobal
-= Going Backwards: Running GNU OFlox under MS Windows =
+= Going Backwards: Running GNU OFlox Under MS Windows =
 
-This section describes the steps needed to make GNU Oflox work under MS Windows XP
+This section covers the necesary steps to make GNU Oflox work under MS Windows XP
+
+== Software Requirements ==
+
+The folloing software is required:
+
+ * [http://octave.sourceforge.net/ GNU Octave windows version from OctaveForge]
+ * [http://miktex.org/ MikTeX distribution]
+ * [http://www.graphviz.org/Download_windows.php Graphviz program]
+
+Install all three of these programs and make sure the can be accessible via the CMD.EXE console program, that is,
+
+`start->run...` then type `CMD.EXE [enter]`
+
+on the command prompt, try
+
+`dot -V`
+
+Should appear
+
+`dot - graphviz version 2.24.0 (20090616.2323)`
+
+then, check the latex distribution
+
+`latex -version`
+
+which should say
+
+`MiKTeX-pdfTeX 2.8.3512 (1.40.10) (MiKTeX 2.8)`
+
+`Copyright (C) 1982 D. E. Knuth, (C) 1996-2006 Han The Thanh`
+
+`TeX is a trademark of the American Mathematical Society.`
