@@ -3,12 +3,13 @@
 #sidebar SideBarGlobal
 = Going Backwards: Running GNU OFlox Under MS Windows =
 
-This section covers the necesary steps to make GNU Oflox work under MS Windows XP
+This section covers the necesary steps to make GNU Oflox work under *MS Windows XP*
 
 == Software Requirements ==
 
 The folloing software is required (tested version):
 
+ * Microsoft Windows XP (Version 6.0.6000) Note: GNU Oflox requires a _Windows Command Interpreter_ that can handle the `for I in (set) do %nI` directive correctly. (for more information in this topic, try `for /?` on the command prompt of CMD.EXE.
  * [http://octave.sourceforge.net/ GNU Octave windows version from OctaveForge] (Version 3.2.2)
  * [http://miktex.org/ MikTeX distribution] (Version 2.8), after instalation, make *sure* you download the folloing extra latex packages
    * xcolor
