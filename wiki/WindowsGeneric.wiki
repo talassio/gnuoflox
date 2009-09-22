@@ -207,5 +207,5 @@ octave-3.2.2.exe:14:~\Desktop
 }}}
 now we have a bunch of file on the Desktop and the most important one is *master_noname.pdf* go ahead and open it!
 == Screen Shots ==
-Here is screen shot showing the GNU Octave window and a PDF output.
+Here is a screen shot showing the GNU Octave window and a PDF output for the `pfmc100.min` problem.
 http://gnuoflox.googlecode.com/files/scr_win02.jpg
