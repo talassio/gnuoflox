@@ -49,6 +49,8 @@ which should say
 
 `TeX is a trademark of the American Mathematical Society.`
 
+http://gnuoflox.googlecode.com/files/menu-programs.png
+
 == Installing the GNU Oflox Package ==
 Download from [http://code.google.com/p/gnuoflox/downloads/list here] the latest gnuoflox-x.y.z-tar.gz package file and save it on your Desktop.
 
