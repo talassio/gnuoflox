@@ -20,7 +20,7 @@ The folloing software is required (tested version):
 
 Install all three of these programs and make sure the can be accessible via the CMD.EXE console program, that is,
 
-`start->run...` then type `CMD.EXE [enter]`
+`start->run...` then type `CMD.EXE /E:ON [enter]`
 
 on the command prompt, try
 
@@ -32,7 +32,7 @@ Should appear
 
 then, check the latex distribution
 
-`latex -version`
+`pdflatex -version`
 
 which should say
 
@@ -41,6 +41,10 @@ which should say
 `Copyright (C) 1982 D. E. Knuth, (C) 1996-2006 Han The Thanh`
 
 `TeX is a trademark of the American Mathematical Society.`
+
+*CRITICAL NOTE 1: GNU Oflox only works if GNU Octave is run in a CMD.EXE environment with the COMMAND EXTENSIONS enabled, to enable them run the CMD.EXE command with the /E:ON switch.* 
+
+*CRITICAL NOTE 2: The CMD.EXE /? help pages state the COMMAND EXTENSIONS are enable by default (/E:ON), but the GNU Octave system call DOES NOT inherit it, that is why you neet to run GNU Octave from a console with this switch enabled explicitly.*
 
 Now we need to install the GNU Oflox package, open GNU Octave and on the prompt type:
 
