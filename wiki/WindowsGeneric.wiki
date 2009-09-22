@@ -3,7 +3,7 @@
 #sidebar SideBarGlobal
 = Going Backwards: Running GNU OFlox Under MS Windows =
 
-This section covers the necesary steps to make GNU Oflox work under *MS Windows XP*
+This section covers the necesary steps to make GNU Oflox work under *Microsoft Windows XP*
 
 == Software Requirements and Setup ==
 
@@ -86,7 +86,7 @@ We are now ready to solve a problem, the package includes a few simple problems,
 
 `> [ Z X it it0 ] = oflox('C:\Octave\3.2.2_gcc-4.3.0\share\octave\packages\gnuoflox-1.0.3\doc\nets\pfmc100.min', conf);`
 
-here follows a lot of output information... [you can skip reading it...]
+here follows a lot of output information...
 {{{
 octave-3.2.2.exe:13:~\Desktop
 > [Z X it it0]=oflox('C:\Octave\3.2.2_gcc-4.3.0\share\octave\packages\gnuoflox-1.0.3\doc\nets\pfmc100.min', conf);
@@ -205,3 +205,6 @@ octave-3.2.2.exe:14:~\Desktop
 >
 }}}
 now we have a bunch of file on the Desktop and the most important one is *master_noname.pdf* go ahead and open it!
+== Screen Shots ==
+Here are two screen shots showing the GNU Octave window and the the PDF output.
+ 
