@@ -38,3 +38,11 @@ which should say
 `TeX is a trademark of the American Mathematical Society.`
 
 Now we need to install the GNU Oflox package, open GNU Octave and on the prompt type:
+
+`octave-3.2.2.exe:1:C:\Octave\3.2.2_gcc-4.3.0\bin
+
+`> cd '~\Desktop'`
+
+`octave-3.2.2.exe:2:~\Desktop`
+
+`> pkg install gnuoflox-x.y.z-tar'`
