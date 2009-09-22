@@ -1,5 +1,5 @@
 #summary Windows related topics
-#labels Phase-Design
+#labels Phase-Deploy
 #sidebar SideBarGlobal
 = Going Backwards: Running GNU OFlox Under MS Windows =
 http://gnuoflox.googlecode.com/files/scr_win01.jpg
