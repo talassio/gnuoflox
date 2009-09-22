@@ -5,11 +5,16 @@
 
 This section covers the necesary steps to make GNU Oflox work under *MS Windows XP*
 
-== Software Requirements ==
+== Software Requirements and Setup ==
 
 The folloing software is required (tested version):
 
- * Microsoft Windows XP (Version 6.0.6000) Note: GNU Oflox requires a _Windows Command Interpreter_ that can handle the `for I in (set) do %nI` directive correctly. (for more information in this topic, try `for /?` on the command prompt of CMD.EXE.
+ * Microsoft Windows XP (Version 6.0.6000). Note: GNU Oflox requires a _Windows Command Interpreter_ that can handle the 
+
+`for I in (set) do %nI` 
+
+directive correctly. For more information in this topic, try 
+`for /?` on the command prompt of CMD.EXE.
  * [http://octave.sourceforge.net/ GNU Octave windows version from OctaveForge] (Version 3.2.2)
  * [http://miktex.org/ MikTeX distribution] (Version 2.8), after instalation, make *sure* you download the folloing extra latex packages
    * xcolor
@@ -19,9 +24,9 @@ The folloing software is required (tested version):
    * amsmath 
  * [http://www.graphviz.org/Download_windows.php Graphviz program] (Version 2.24.0)
 
-Install all three of these programs and make sure the can be accessible via the CMD.EXE console program, that is,
+Install all and make sure the `dot`, `latex` and `dvipdfm` programs can be accessible via the CMD.EXE console interpreter, that is,
 
-`start->run...` then type `CMD.EXE /E:ON [enter]`
+`start->run...` then type `CMD.EXE [enter]`
 
 on the command prompt, try
 
@@ -33,7 +38,7 @@ Should appear
 
 then, check the latex distribution
 
-`pdflatex -version`
+`latex -version`
 
 which should say
 
@@ -43,11 +48,10 @@ which should say
 
 `TeX is a trademark of the American Mathematical Society.`
 
-*CRITICAL NOTE 1: GNU Oflox only works if GNU Octave is run in a CMD.EXE environment with the COMMAND EXTENSIONS enabled, to enable them run the CMD.EXE command with the /E:ON switch.* 
+== Installing the GNU Oflox Package ==
+Download from [http://code.google.com/p/gnuoflox/downloads/list here] the latest package file and save it on your Desktop.
 
-*CRITICAL NOTE 2: The CMD.EXE /? help pages state the COMMAND EXTENSIONS are enable by default (/E:ON), but the GNU Octave system call DOES NOT inherit it, that is why you neet to run GNU Octave from a console with this switch enabled explicitly.*
-
-Now we need to install the GNU Oflox package, open GNU Octave and on the prompt type:
+To install the GNU Oflox package, open GNU Octave and on the prompt type:
 
 `octave-3.2.2.exe:1:C:\Octave\3.2.2_gcc-4.3.0\bin
 
