@@ -3,5 +3,5 @@
   * [Introduction Introduction]
   * [CompleteExample A Simple Example]
   * [Examples Screen Shots and More Examples]
-  * [WindowsGeneric Going Backwards: Running GNU OFlox under MS Windows]
+  * [WindowsGeneric GNU Oflox under Windows]
   * [Dcmef DIMACS Challenge Min Extended Format]
