@@ -122,7 +122,7 @@
 %          1.0+fix 1 230908+
 %
 % DATE:
-%          18/11/2006, 03/08/2008, 26/06/2009, 15/09/2009
+%          18/11/2006, 2007, 2008, 2009
 %
 % DESCRIPTION:
 %          Simplex FMC implementation. It is not a production purpose code and it is intended for educational purpose.
@@ -144,6 +144,7 @@
 %          To my tutor Professor B. Feijoo
 %
 % CONTRIBUTORS:
+%          B. Feijoo
 %
 %
 function [Z, flow, iter, iterF1] = oflox(
@@ -208,6 +209,21 @@ global MO; % Multiple Outputs
 MO = config;
 iterF1 = 0;
 master = ''; % Master \LaTeX file
+
+% Header
+printf("This is GNU Oflox. Copyright (C) 2009 Andres Sajo.\n\
+This is free software; see the source code for copying conditions.\n\
+There is ABSOLUTELY NO WARRANTY; not even for MERCHANTABILITY or\n\
+FITNESS FOR A PARTICULAR PURPOSE.  For details, see `COPYING' file.\n\
+Running on a ");
+if ( isunix() ),
+        printf("Unix compatible system!\n");
+elseif ( ispc() ),
+        printf("MS Windows machine.\n");
+else
+        printf("Machintosh OS (unsupported)\n");
+        error("If you want to contribute on this software to make it run under Mac, please contant the author!");
+end;
 
 if ( ( MO.FASE1 == true ) & ( MO.BIGM == true ) ), error("Can't use FASE-I and Big-M methods simultaneously! Choose only one."); end;
 
@@ -445,12 +461,23 @@ Z = C'*X;
 end; % End of FASE 2 loop
 
 if ( config.latex == true ), % Post process the dot files and write master \LaTeX file.
-        warning('Using the SYSTEM call.');
+                if ( isunix() ),
+                        warning('Using the SYSTEM calls');
+                elseif ( ispc() ),
+                        warning('Using unsafe CMD.EXE calls');
+                end;
 % Master \LaTeX file
         master = strcat('master_', config.aname, '.tex');
-        motexpath = which oflox;
-        motexpath = strcat(motexpath(1:(length(motexpath)-2)), '_mo.tex');
-        system(strcat('cp -v ', motexpath, ' ', master));
+                if ( isunix() ),
+                        eval( "motexpath = which oflox;" );
+                        motexpath = strcat(motexpath(1:(length(motexpath)-2)), '_mo.tex');
+                        system(strcat('cp -v ', motexpath, ' ', master));
+                elseif ( ispc() ),
+                        eval( 'motexpath = __which__("oflox");' );
+                        motexpath = motexpath.file;
+                        motexpath = cstrcat(motexpath(1:(length(motexpath)-2)), '_mo.tex');
+                        system(cstrcat('copy ', motexpath, ' ', master));
+                end;
         [fid, message] = fopen(master, 'a');
         if (fid == -1)
                 error('Could not open master latex output file: %s', master);
@@ -469,7 +496,11 @@ if ( config.latex == true ), % Post process the dot files and write master \LaTe
         config.aname, config.scale, '***1');
 
         if ( config.FASE1 == true ),
-                cmdstring = strcat('for FILE in F1-', config.aname, '*.dot; do dot -Tps "$FILE" -o ${FILE%.dot}.ps ; rm "$FILE" ; done');
+                                if ( isunix() ),
+                                        cmdstring = strcat('for FILE in F1-', config.aname, '*.dot; do dot -Tps "$FILE" -o ${FILE%.dot}.ps ; rm "$FILE" ; done');
+                                elseif ( ispc() ),
+                                        cmdstring = cstrcat('for %I in (F1-', config.aname, '*.dot) do dot -Tps "%I" -o "%~nI.ps" 2>NUL & del "%I"');
+                                end;
                 system(cmdstring);
                 % Change to FASE 1
                 fprintf(fid, '\\FMCname{%s}\n', strcat('F1-', config.aname));
@@ -480,7 +511,11 @@ if ( config.latex == true ), % Post process the dot files and write master \LaTe
                 end;
                 fprintf(fid, '\\begin{figure*}\n\\FMCsolution{%f}{%s}\n\\end{figure*} \\clearpage\n\n', config.scale, '***4');
         elseif ( config.BIGM == true ),
-                cmdstring = strcat('for FILE in M-', config.aname, '*.dot; do dot -Tps "$FILE" -o ${FILE%.dot}.ps ; rm "$FILE" ; done');
+                                if ( isunix() ),
+                                        cmdstring = strcat('for FILE in M-', config.aname, '*.dot; do dot -Tps "$FILE" -o ${FILE%.dot}.ps ; rm "$FILE" ; done');
+                                elseif ( ispc() ),
+                                        cmdstring = cstrcat('for %I in (M-', config.aname, '*.dot) do dot -Tps "%I" -o "%~nI.ps" 2>NUL & del "%I"');
+                                end;
                 system(cmdstring);
                 % Change to BIGM
                 fprintf(fid, '\\FMCname{%s}\n', strcat('M-', config.aname));
@@ -493,7 +528,11 @@ if ( config.latex == true ), % Post process the dot files and write master \LaTe
         end;
 
         % Compile the problem description: (and othe files if exist...
-        cmdstring = strcat('for FILE in ', config.aname, '*.dot; do dot -Tps "$FILE" -o ${FILE%.dot}.ps ; rm "$FILE" ; done');
+                if ( isunix() ),
+                        cmdstring = strcat('for FILE in ', config.aname, '*.dot; do dot -Tps "$FILE" -o ${FILE%.dot}.ps ; rm "$FILE" ; done');
+                elseif ( ispc() ),
+                        cmdstring = cstrcat('for %I in (', config.aname, '*.dot) do dot -Tps "%I" -o "%~nI.ps" 2>NUL & del "%I"');
+                end;
         system(cmdstring);
 
         if (config.BIGM == false),
@@ -511,9 +550,14 @@ if ( config.latex == true ), % Post process the dot files and write master \LaTe
         fclose(fid);
 
         if (config.compiledvi == true ),
+                        if ( isunix() ),
                 system(strcat('latex ', master));
-                system(strcat('dvipdf master_', config.aname, '.dvi'));
-                printf("MO: Master output document %s compiled to %s and %s\n", master, strcat('master_', config.aname, '.dvi'), strcat('master_', config.aname, '.pdf'));
+                                system(strcat('dvipdf master_', config.aname, '.dvi'));
+                        elseif ( ispc() ),
+                                system(cstrcat('latex ', master));
+                                system(strcat('dvipdfm -p "letter" master_', config.aname, '.dvi'));
+                        end;
+                printf("MO: Master output document %s compiled to %s\n", master, strcat('master_', config.aname, '.pdf'));
         else
                 printf("MO: Master output document is %s\n", master);
         end;

@@ -130,10 +130,10 @@ end
 
 
 if (sucess == 7),
-        printf("file is DIMACS MIN FORMAT\n");
+        printf("information: The input file is DIMACS Challenge Min format (native)\n");
         fclose(fid);
 elseif (sucess == 15),
-        printf("file is DIMACS MIN EXTENDED FORMAT -- need to read extended info... later\n");
+        printf("information: The input file is DIMACS Challenge Min format with extensions\n");
 else
         error("READ_DIMACS_MIN: Unexpected reading input error.");
 end;
@@ -170,15 +170,15 @@ AR(NODOS+1) = AP(NODOS+1);
 U( U <= 0 ) = inf;
 
 if (sucess == 7),
-        printf("file is DIMACS MIN FORMAT read OK.\n");
+        % printf("file is DIMACS MIN FORMAT read OK.\n");
         return;
 else
         if (MO.sol0 == 0),
-                warning("Ignoring specified initial solution in file.");
-                printf("file is DIMACS MIN FORMAT read OK.\n");
+                printf("information: File contains initial solution information. Ignoring by sol0 = false.\n");
+                % printf("file is DIMACS MIN FORMAT read OK.\n");
                 return;
         end;
-        printf("reading extended information...\n");
+        % printf("reading extended information...\n");
 end;
 
 % Now we continue reading the file
@@ -221,7 +221,7 @@ end
 
 
 if (sucess == 31),
-        printf("file is DIMACS MIN EXTENDED FORMAT read OK!\n");
+        % printf("file is DIMACS MIN EXTENDED FORMAT read OK!\n");
         fclose(fid);
 else
         error("READ_DIMACS_MIN: Unexpected reading input error.");
