@@ -87,12 +87,12 @@ We are now ready to solve a problem, the package includes a few simple problems,
 
 `octave-3.2.2.exe:6:~\Desktop`
 
-`> [ Z X it it0 ] = oflox('C:\Octave\3.2.2_gcc-4.3.0\share\octave\packages\gnuoflox-1.0.3\doc\nets\pfmc100.min', conf);`
+`> [ Z X it it0 ] = oflox('C:\Octave\3.2.2_gcc-4.3.0\share\octave\packages\gnuoflox-1.0.4\doc\nets\pfmc100.min', conf);`
 
 here follows a lot of output information...
 {{{
 octave-3.2.2.exe:13:~\Desktop
-> [Z X it it0]=oflox('C:\Octave\3.2.2_gcc-4.3.0\share\octave\packages\gnuoflox-1.0.3\doc\nets\pfmc100.min', conf);
+> [Z X it it0]=oflox('C:\Octave\3.2.2_gcc-4.3.0\share\octave\packages\gnuoflox-1.0.4\doc\nets\pfmc100.min', conf);
 This is GNU Oflox. Copyright (C) 2009 Andres Sajo.
 This is free software; see the source code for copying conditions.
 There is ABSOLUTELY NO WARRANTY; not even for MERCHANTABILITY or
