@@ -4,13 +4,13 @@
 = Going Backwards: Running GNU OFlox Under Microsoft Windows =
 http://gnuoflox.googlecode.com/files/scr_win01.jpg
 
-This section covers the necesary steps to make GNU Oflox work under *Microsoft Windows XP*
+This section covers the necesary steps to make GNU Oflox work under *Microsoft Windows XP* and *Vista*
 
 == Software Requirements and Setup ==
 
 The folloing software is required (tested version):
 
- * Microsoft Windows XP (Version 6.0.6000). Note: GNU Oflox requires a _Windows Command Interpreter_ that can handle the 
+ * Microsoft Windows Vista (Version 6.0.6000). Note: GNU Oflox requires a _Windows Command Interpreter_ that can handle the 
 
 `for I in (set) do %nI` 
 
