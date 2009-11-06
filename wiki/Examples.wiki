@@ -7,8 +7,10 @@ The following screen shot sequence shows the tipical steps involved while solvin
 
 Click an image to enlarge
 
-|| [http://gnuoflox.googlecode.com/files/theminfile.png http://gnuoflox.googlecode.com/files/theminfile-small.png] || [http://gnuoflox.googlecode.com/files/theoctaveshell.png http://gnuoflox.googlecode.com/files/theoctaveshell-small.png] || [http://gnuoflox.googlecode.com/files/theoutput1.png http://gnuoflox.googlecode.com/files/theoutput1-small.png] || [http://gnuoflox.googlecode.com/files/theoutput2.png http://gnuoflox.googlecode.com/files/theoutput2-small.png] ||
-|| The problem in DIMACS Challenge Min Extended format, shown in the text editor Kate|| Octave while solving || PDF Output double page 1/2 || Single output page showing the optimum solution for the problem PFMCEXX1 2/2 ||
+||(1/4) The problem in DIMACS Challenge Min Extended format, shown in the text editor Kate||(2/4) Octave while solving||
+||[http://gnuoflox.googlecode.com/files/theminfile.png http://gnuoflox.googlecode.com/files/theminfile-small.png]||[http://gnuoflox.googlecode.com/files/theoctaveshell.png http://gnuoflox.googlecode.com/files/theoctaveshell-small.png]||
+||(3/4) PDF Output double page 1/2||(4/4) Single output page showing the optimum solution for the problem PFMCEXX1 2/2||
+||[http://gnuoflox.googlecode.com/files/theoutput1.png http://gnuoflox.googlecode.com/files/theoutput1-small.png]||[http://gnuoflox.googlecode.com/files/theoutput2.png http://gnuoflox.googlecode.com/files/theoutput2-small.png]||
 
  
 = List of examples =
