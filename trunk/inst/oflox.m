@@ -251,13 +251,13 @@ if ( config.sol0 == true ),
         %
         % See if the read_dimacs_min found extra info...
         if (sum(TLU==0) ~= (NODOS-1)), error("Something is wrong, specified initial solution is not complete."); end;
-
+        ARCCLASS = zeros(ARCOS, 1); % All arcs a natural arcs.
         % Verify is sol0 is feasable! NOTE: THIS MUST BE DONE BEFORE CALLING CALFLU, BECAUSE
         % IT OVER WRITES B.
-        for i = 1:NODOS,
+        % for i = 1:NODOS,
         % printf('Nodo %i: B=%i = + SALE=%i - ENTRA=%i\n', i, B(i), sum(X(AP(i):(AP(i+1)-1))), sum(X(TRAZA(AR(i):(AR(i+1)-1)))));
-                if ( B(i) ~= ( sum(X(AP(i):(AP(i+1)-1))) - sum(X(TRAZA(AR(i):(AR(i+1)-1)))) ) ), error('Initial solution is not feasable.'); end;
-        end
+        %         if ( B(i) ~= ( sum(X(AP(i):(AP(i+1)-1))) - sum(X(TRAZA(AR(i):(AR(i+1)-1)))) ) ), error('Initial solution is not feasable.'); end;
+        % end
 end
 
 % Print out the description of the problem to resolve WARNING:
@@ -418,7 +418,8 @@ while (tablav(moname, iter)),
                 printf("c File name: %s\n", filename);
                 printf("c Information for iteration %i, current cost z = %i\n", iter, Z);
                 printf("c FROM TO FLOW (TREE arcs)\n", filename);
-                printf("t %i %i %i\n", [DE(TLU==0), A(TLU==0), X(TLU==0)]');
+                % printf("t %i %i %i\n", [DE(TLU==0), A(TLU==0), X(TLU==0)]');
+                printf("t %i %i\n", [DE(TLU==0), A(TLU==0)]');
                 if (sum(TLU==1) ~= 0), % Add UPPER elements
                         printf("c FROM TO (UPPER arcs)\n", filename);
                         printf("u %i %i\n", [DE(TLU==1) A(TLU==1)]');

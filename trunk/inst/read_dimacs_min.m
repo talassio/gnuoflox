@@ -190,7 +190,8 @@ while (linea ~= -1),
         if (linea(1)=="c"),
         elseif (linea(1)=="t"),
                 sucess = bitor(sucess, 16);
-                [str de a f cnt] = sscanf(linea, '%s %i %i %i %s', "C");
+                % [str de a f cnt] = sscanf(linea, '%s %i %i %i %s', "C");
+                [str de a cnt] = sscanf(linea, '%s %i %i %s', "C");
                 % printf("found extra info, tree element! (%i, %i) with flow=%i\n", de, a, f);
                 idx = 0;
                 for (i = 0 : AP(de+1)-AP(de)-1)
@@ -198,8 +199,8 @@ while (linea ~= -1),
                         if ( A(AP(de)+i) == a ),
                                 idx = 1;
                                 TLU(AP(de)+i) = 0; % TREE
-                                if ( U(AP(de)+i) < f ), error("Arc flow exceeds Arc Upper bound. Wrong initial solution specification."); end;
-                                X(AP(de)+i) = f;
+                                % if ( U(AP(de)+i) < f ), error("Arc flow exceeds Arc Upper bound. Wrong initial solution specification."); end;
+                                % X(AP(de)+i) = f;
                         end;
                 end;
                 if (idx ~= 1), error("Specified arc not found. Wrong initial solution specification."); end;
@@ -212,7 +213,7 @@ while (linea ~= -1),
                         if ( A(AP(de)+i) == a ),
                                 idx = 1;
                                 TLU(AP(de)+i) = 1; % UPPER
-                                X(AP(de)+i) = U(AP(de)+i); % This step will be repeated in CALFLU ...
+                                % X(AP(de)+i) = U(AP(de)+i); % This step will be repeated in CALFLU ...
                         end;
                 end;
                 if (idx ~= 1), error("Specified arc not found. Wrong initial solution specification."); end;
