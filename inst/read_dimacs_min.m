@@ -132,10 +132,13 @@ end
 if (sucess == 7),
         printf("information: The input file is DIMACS Challenge Min format (native)\n");
         fclose(fid);
+        if (MO.sol0 == true),
+                error('Specified input file does not contain extended tree information.');
+        end;
 elseif (sucess == 15),
         printf("information: The input file is DIMACS Challenge Min format with extensions\n");
 else
-        error("READ_DIMACS_MIN: Unexpected reading input error.");
+        error("READ_DIMACS_MIN: Unexpected input error.");
 end;
 
 [DE, index] = sort(DE);
@@ -185,7 +188,7 @@ end;
 
 while (linea ~= -1),
         if (linea(1)=="c"),
-        elseif (linea(1)=="t"), % If found then end of DIMACS MIN is reached...
+        elseif (linea(1)=="t"),
                 sucess = bitor(sucess, 16);
                 [str de a f cnt] = sscanf(linea, '%s %i %i %i %s', "C");
                 % printf("found extra info, tree element! (%i, %i) with flow=%i\n", de, a, f);
@@ -209,6 +212,7 @@ while (linea ~= -1),
                         if ( A(AP(de)+i) == a ),
                                 idx = 1;
                                 TLU(AP(de)+i) = 1; % UPPER
+                                X(AP(de)+i) = U(AP(de)+i); % This step will be repeated in CALFLU ...
                         end;
                 end;
                 if (idx ~= 1), error("Specified arc not found. Wrong initial solution specification."); end;
@@ -223,23 +227,53 @@ end
 if (sucess == 31),
         % printf("file is DIMACS MIN EXTENDED FORMAT read OK!\n");
         fclose(fid);
+
+        % Build the PRED, THREAD and DEPTH ARRAYS
+        % DFS
+        MARK = zeros(length(B), 1);
+        MARK(1) = 1;
+        FLOX_PRED(1) = 0;
+        DEPTH(1) = 0;
+        THREAD(1) = 1;
+        next = 1;
+        STACK = 1;
+        TREE = find(TLU == 0);
+        while (length(STACK) > 0),
+                i = STACK(1);
+                j = 0;
+                for t = 1:length(TREE),
+                        k = TREE(t);
+                        if ( i == A(k) ),
+                                j = DE(k);
+                        elseif (i == DE(k) ),
+                                j = A(k);
+                        else,
+                                continue;
+                        end;
+                        if ( MARK(j) == 0 ),
+                                MARK(j) = 1;
+                                TREE(t) = TREE(end);
+                                TREE = TREE(1:end-1);
+                                break;
+                        end;
+                end;
+                if (j == 0),
+                        STACK = STACK(2:end);
+                        continue;
+                end;
+
+                FLOX_PRED(j) = i;
+                next = next + 1;
+                THREAD(j) = next;
+                DEPTH(j) = DEPTH(i) + 1;
+                STACK = [j; STACK];
+        end
+        [THREAD, i] = sort(THREAD);
+        THREAD(i) = [i(2:end); 1];
+        % [[1:NODOS]', FLOX_PRED, DEPTH, THREAD]
+        % pause;
+        %  error('revisar DFS');
 else
         error("READ_DIMACS_MIN: Unexpected reading input error.");
 end;
-
-%  %  %  %  %  %  [DE A X TLU]
-%  %  %  %  %  %  % Now we need to build up THREAD, PRED, DEPTH, PI(calpi();)
-%  %  %  %  %  %  FLOX_PRED(1) = 0;
-%  %  %  %  %  %  DEPTH(1) = 0;
-%  %  %  %  %  %  tree = find(TLU == 0); % length(tree) == NODOS-1 !!!
-%  %  %  %  %  %  for i = 1:length(tree)
-%  %  %  %  %  %          if (DE(tree(i)) == 1),
-%  %  %  %  %  %                  h = DE(tree(i));
-%  %  %  %  %  %                  t = A(tree(i));
-%  %  %  %  %  %          else
-%  %  %  %  %  %                  h = A(tree(i));
-%  %  %  %  %  %                  t = DE(tree(i));
-%  %  %  %  %  %          end;
-%  %  %  %  %  %          THREAD(i) = t;
-%  %  %  %  %  %  end;
 

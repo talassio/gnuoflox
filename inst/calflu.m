@@ -43,7 +43,6 @@ global DE;
 
 global debug;
 
-global ROOT;
 global ARCCLASS;
 
 %  if ( debug ), fprintf('init: calflu.\n'); end
@@ -59,7 +58,7 @@ if ( sum(X==inf) ~= 0 ),
         error("CALFLU: The problem is UNBOUNDED.");
 end;
 
-% Execute the flows form partition U:
+% Execute the flows form partition U: NOTE WE MODIFY B !!!!! Cannot be used to verify if sol0 is feasable!
 mU = find(TLU==1);
 for i = 1:length(mU)
         B(DE(mU(i))) = B(DE(mU(i))) - U(mU(i));
@@ -72,7 +71,7 @@ end
 
 NB = B;
 NTLU = TLU;
-j = ROOT;
+j = 1; % ROOT;
 % NTLU
 while (sum(NTLU==0))
         j = find(THREAD == j); % <-----! OPT(4): Change this for an ARCO_THREAD array

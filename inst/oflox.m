@@ -1,152 +1,154 @@
-%  ############################################################################
-%  #    GNU Oflox Copyright (C) 2006, 2007, 2008, 2009 by Andres Sajo         #
-%  #    talassio-at-gmail-dot-com                                             #
-%  #                                                                          #
-%  #    This program is free software; you can redistribute it and/or modify  #
-%  #    it under the terms of the GNU General Public License as published by  #
-%  #    the Free Software Foundation; either version 3 of the License, or     #
-%  #    (at your option) any later version.                                   #
-%  #                                                                          #
-%  #    This program is distributed in the hope that it will be useful,       #
-%  #    but WITHOUT ANY WARRANTY; without even the implied warranty of        #
-%  #    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the         #
-%  #    GNU General Public License for more details.                          #
-%  #                                                                          #
-%  #    You should have received a copy of the GNU General Public License     #
-%  #    along with this program; if not, write to the                         #
-%  #    Free Software Foundation, Inc.,                                       #
-%  #    59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.             #
-%  ############################################################################
-%
-%  Universidad Sim\'on Bol\'ivar
-%  Coordinaci\'on de Matematicas
-%  Departamento de C\'omputo Cient\'ifico y Estad\'istica
-%
-%
-% NAME:
-%          GNU oflox -- Simplex FMC implementation with aims to academic use.
-%
-% SYNAPSIS:
-%          function [Z, flow, iter, iterF1] = oflox (
-%          filename,
-%          config = struct( % Default values follow
-%                          'sol0'            , {false},
-%                          'FASE1'           , {false},
-%                          'BIGM'            , {true},
-%                          'latex'           , {false},
-%                          'aname'           , {'noname'},
-%                          'scale'           , {0.5},
-%                          'lang'            , {'en'},
-%                          'color_arc'       , {'#000000'},
-%                          'color_l'         , {'#8D0000'},
-%                          'color_u'         , {'#00C000'},
-%                          'color_art'       , {'#FF6A00'},
-%                          'color_thr'       , {'#AAAAFF'},
-%                          'color_pot'       , {'#DA03D7'},
-%                          'show_thread'     , {false},
-%                          'show_depth'      , {false},
-%                          'compiledvi'      , {false},
-%                          'it_info'         , {-1}
-%          )
-%
-%          filename:           is a DIMACS CHALLENGE MIN EXTENDED FORMAT network, for more information
-%                              on this format please consult the ``dimacs.extended'' file.
-%
-%          config.sol0:        Boolean value indicating wether to use or not the initial feaseble
-%                              solution defined in ``filename''. Defaults to false.
-%
-%          config.FASE1:       Boolean value indicating wether the problem should be solved using
-%                              FASE 1 / FASE 2. Defaults to false.
-%
-%          config.BIGM:        Boolean value indicating wether the problem should be solved using Big M.
-%                              Defaults to true.
-%
-%          config.latex:       Boolean value indicating wether to output latex code or not. Default to
-%                              false.
-%
-%          config.compiledvi:  Boolean value indicating wether to compile to DVI and PDF the \LaTeX
-%                              generated source. This switch is only relevant is config.latex is true.
-%
-%          config.aname:       String specifying the latex output file pattern. Default to 'noname'.
-%
-%          config.scale:       float specifying the scale factor of the dot generated graphs used by
-%                              \includegraphics[scale=0.5]{...}. This switch is only used if
-%                              config.latex is true. Default to '0.5'.
-%
-%          config.lang:        Two coded caracters specifying the latex output language. Languages
-%                              currently supported are:
-%                                 English ``en'' (default)
-%                                 Spanish ``es''
-%
-%          config.color_arc:   The color of the arcs in HTML coded color. Defaults to black (#000000).
-%
-%          config.color_l:     The color of arcs in lower bound in HTML coded color. Defaults to
-%                              red (#8D0000).
-%
-%          config.color_u:     The color of arcs in upper bound in HTML coded color. Defaults to
-%                              green (#00C000).
-%
-%          config.color_art:   The color of artificial arcs in HTML coded color. Defaults to
-%                              orange (#FF6A00).
-%
-%          config.color_thr:   The color of the THREAD array (when displayed by config.show_thread=true).
-%                              Default to blue (#AAAAFF).
-%
-%          config.color_pot:   The color of the arcs that enters and leaves the tree on the same iteration.
-%                              Defaults to magenta (#DA03D7).
-%
-%          config.show_thread: Boolean value specifying wether to display the thread array on the tree
-%                              graph. Defaults to false.
-%
-%          config.show_depth:  Boolean value specifying wether to display the depth array on the tree graph.
-%                              Defaults to false.
-%
-%          config.it_info:     This switch indicates that the information of a specific iteration is desired.
-%                              The iteration information is displayed in DIMACS min extended format ready to
-%                              be included in a DIMACS min extended file. Once displayed the information the
-%                              iterations are stopped. If the value is less than 0 then no information is
-%                              displayed. Defaults to -1.
-%
-%
-%          NOTE: The switches config.FASE1 and config.BIGM are mutually exclusive and are ignored if config.sol0 is set to true.
-%
-% VERSION:
-%          1.0.1 15/09/2009 Moved to google-code and Octave packege inst
-%          1.0 RC-7 14/09/09 first public release google-code import
-%          1.0 RC-6 31/08/2009 almost ready for the public!
-%          1.0 Beta 4 Big-M 24/08/2009 <- The BIG-jiM Code!
-%          version 1.0 BETA 2 incorporates a better latex/dvi interface
-%          oflox moves to GNU oflox version 1.0 BETA +06/08/2009+
-%          1.0+second release 03/11/2008+
-%          1.0+first release 25/10/2008+
-%          1.0+fix 1 230908+
-%
-% DATE:
-%          18/11/2006, 2007, 2008, 2009
-%
-% DESCRIPTION:
-%          Simplex FMC implementation. It is not a production purpose code and it is intended for educational purpose.
-%
-% AUTHOR:
-%          Andrew Sajo, http://code.google.com/p/gnuoflox/
-%          Universidad Simón Bolívar
-%          Coordinación de Matematicas
-%          Departamento de Cómputo Científico y Estadística
-%          Caracas, Venezuela.
-%
-% BUGS:
-%          Please report bugs to talassio.at.gmail.dot.com
-%
-% COPYRIGHT:
-%          This software is released with the GLP version 3 license
-%
-% KUDOS:
-%          To my tutor Professor B. Feijoo
-%
-% CONTRIBUTORS:
-%          B. Feijoo
-%
-%
+## Copyright (C) 2006, 2007, 2008, 2009 Andres Sajo
+##  ############################################################################
+##  #    GNU Oflox Copyright (C) 2006, 2007, 2008, 2009 by Andres Sajo         #
+##  #    talassio-at-gmail-dot-com                                             #
+##  #                                                                          #
+##  #    This program is free software; you can redistribute it and/or modify  #
+##  #    it under the terms of the GNU General Public License as published by  #
+##  #    the Free Software Foundation; either version 3 of the License, or     #
+##  #    (at your option) any later version.                                   #
+##  #                                                                          #
+##  #    This program is distributed in the hope that it will be useful,       #
+##  #    but WITHOUT ANY WARRANTY; without even the implied warranty of        #
+##  #    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the         #
+##  #    GNU General Public License for more details.                          #
+##  #                                                                          #
+##  #    You should have received a copy of the GNU General Public License     #
+##  #    along with this program; if not, write to the                         #
+##  #    Free Software Foundation, Inc.,                                       #
+##  #    59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.             #
+##  ############################################################################
+
+## ORIGIN:
+##          Sim\'on Bol\'ivar University
+##          School of Mathematics
+##          Department of Cientific Computing and Statistics
+##
+## NAME:
+##          GNU oflox -- Simplex FMC implementation with aims to academic use.
+##
+## SYNAPSIS:
+##          function [Z, flow, iter, iterF1] = oflox (
+##          filename,
+##          config = struct( % Default values follow
+##                          'sol0'            , {false},
+##                          'FASE1'           , {false},
+##                          'BIGM'            , {true},
+##                          'latex'           , {false},
+##                          'aname'           , {'noname'},
+##                          'scale'           , {0.5},
+##                          'lang'            , {'en'},
+##                          'color_arc'       , {'#000000'},
+##                          'color_l'         , {'#8D0000'},
+##                          'color_u'         , {'#00C000'},
+##                          'color_art'       , {'#FF6A00'},
+##                          'color_thr'       , {'#AAAAFF'},
+##                          'color_pot'       , {'#DA03D7'},
+##                          'show_thread'     , {false},
+##                          'show_depth'      , {false},
+##                          'compiledvi'      , {false},
+##                          'it_info'         , {-1}
+##          )
+##
+##          filename:           is a DIMACS CHALLENGE MIN EXTENDED FORMAT network, for more information
+##                              on this format please consult the ``dimacs.extended'' file.
+##
+##          config.sol0:        Boolean value indicating wether to use or not the initial feaseble
+##                              solution defined in ``filename''. Defaults to false.
+##
+##          config.FASE1:       Boolean value indicating wether the problem should be solved using
+##                              FASE 1 / FASE 2. Defaults to false.
+##
+##          config.BIGM:        Boolean value indicating wether the problem should be solved using Big M.
+##                              Defaults to true.
+##
+##          config.latex:       Boolean value indicating wether to output latex code or not. Default to
+##                              false.
+##
+##          config.compiledvi:  Boolean value indicating wether to compile to DVI and PDF the \LaTeX
+##                              generated source. This switch is only relevant is config.latex is true.
+##
+##          config.aname:       String specifying the latex output file pattern. Default to 'noname'.
+##
+##          config.scale:       float specifying the scale factor of the dot generated graphs used by
+##                              \includegraphics[scale=0.5]{...}. This switch is only used if
+##                              config.latex is true. Default to '0.5'.
+##
+##          config.lang:        Two coded caracters specifying the latex output language. Languages
+##                              currently supported are:
+##                                 English ``en'' (default)
+##                                 Spanish ``es''
+##
+##          config.color_arc:   The color of the arcs in HTML coded color. Defaults to black (#000000).
+##
+##          config.color_l:     The color of arcs in lower bound in HTML coded color. Defaults to
+##                              red (#8D0000).
+##
+##          config.color_u:     The color of arcs in upper bound in HTML coded color. Defaults to
+##                              green (#00C000).
+##
+##          config.color_art:   The color of artificial arcs in HTML coded color. Defaults to
+##                              orange (#FF6A00).
+##
+##          config.color_thr:   The color of the THREAD array (when displayed by config.show_thread=true).
+##                              Default to blue (#AAAAFF).
+##
+##          config.color_pot:   The color of the arcs that enters and leaves the tree on the same iteration.
+##                              Defaults to magenta (#DA03D7).
+##
+##          config.show_thread: Boolean value specifying wether to display the thread array on the tree
+##                              graph. Defaults to false.
+##
+##          config.show_depth:  Boolean value specifying wether to display the depth array on the tree graph.
+##                              Defaults to false.
+##
+##          config.it_info:     This switch indicates that the information of a specific iteration is desired.
+##                              The iteration information is displayed in DIMACS min extended format ready to
+##                              be included in a DIMACS min extended file. Once displayed the information the
+##                              iterations are stopped. If the value is less than 0 then no information is
+##                              displayed. Defaults to -1.
+##
+##
+##          NOTE:               The switches config.FASE1 and config.BIGM are mutually exclusive and are
+##                              ignored if config.sol0 is set to true.
+##
+## VERSION:
+##          1.0.5 06/10/2009 Adding support for initial solution
+##          1.0.1 15/09/2009 Moved to google-code and Octave package inst
+##          1.0 RC-7 14/09/09 first public release google-code import
+##          1.0 RC-6 31/08/2009 almost ready for the public!
+##          1.0 Beta 4 Big-M 24/08/2009 <- The BIG-jiM Code!
+##          version 1.0 BETA 2 incorporates a better latex/dvi interface
+##          oflox moves to GNU oflox version 1.0 BETA +06/08/2009+
+##          1.0+second release 03/11/2008+
+##          1.0+first release 25/10/2008+
+##          1.0+fix 1 230908+
+##
+## DATE:
+##          18/11/2006, 2007, 2008, 2009
+##
+## AUTHOR:
+##          Andrew Sajo, http://code.google.com/p/gnuoflox/
+##          Universidad Simón Bolívar
+##          Coordinación de Matematicas
+##          Departamento de Cómputo Científico y Estadística
+##          Caracas, Venezuela.
+##
+## BUGS:
+##          Please report bugs to talassio.at.gmail.dot.com
+##
+## COPYRIGHT:
+##          This software is released with the GLP version 3 license
+##
+## KUDOS:
+##          To my tutor, Professor B. Feijoo
+##
+## CONTRIBUTORS:
+##          B. Feijoo
+##
+## SEE ALSO:
+##         ofloxconfig
+##
 function [Z, flow, iter, iterF1] = oflox(
         filename,
         config = struct( % Default values follow
@@ -206,6 +208,8 @@ global MO; % Multiple Outputs
 
 % START OF PROGRAM
 
+ROOT = 1;
+
 MO = config;
 iterF1 = 0;
 master = ''; % Master \LaTeX file
@@ -227,7 +231,7 @@ end;
 
 if ( ( MO.FASE1 == true ) & ( MO.BIGM == true ) ), error("Can't use FASE-I and Big-M methods simultaneously! Choose only one."); end;
 
-read_dimacs_min(filename); %% TODO See if there is EXTENDED INFO
+read_dimacs_min(filename);
 if ( length(B) ~= NODOS ) error("Could not read DIMACS MIN file correctly."); end;
 
 OLD_C = C;
@@ -248,11 +252,17 @@ if ( config.sol0 == true ),
         % See if the read_dimacs_min found extra info...
         if (sum(TLU==0) ~= (NODOS-1)), error("Something is wrong, specified initial solution is not complete."); end;
 
+        % Verify is sol0 is feasable! NOTE: THIS MUST BE DONE BEFORE CALLING CALFLU, BECAUSE
+        % IT OVER WRITES B.
+        for i = 1:NODOS,
+        % printf('Nodo %i: B=%i = + SALE=%i - ENTRA=%i\n', i, B(i), sum(X(AP(i):(AP(i+1)-1))), sum(X(TRAZA(AR(i):(AR(i+1)-1)))));
+                if ( B(i) ~= ( sum(X(AP(i):(AP(i+1)-1))) - sum(X(TRAZA(AR(i):(AR(i+1)-1)))) ) ), error('Initial solution is not feasable.'); end;
+        end
 end
 
 % Print out the description of the problem to resolve WARNING:
 % X shows the initial_solution FLOW if the switch is true.
-% Before this we need to see if it is a feasable solution!!!!!
+% sol0 is feasable draw the problem:
 if ( config.latex == true ), mo(config.aname, -1, 0, 0, X, 2, 0); end;
 
 if ( ( config.FASE1 == true ) | ( config.BIGM == true ) ), % DO FASE 1 or BIGM
@@ -373,10 +383,8 @@ if ( ( config.FASE1 == true ) | ( config.BIGM == true ) ), % DO FASE 1 or BIGM
                 OLD_C = 0;
         end;
 else % ( sol0 == true )
-        error('GOT INITIAL SOLUTION');
-        % Verify is sol0 is feasable!
-        % CALPI (this is done in read_dimacs_min();)
-        % CALFLU (updates the B's)
+        % error('GOT INITIAL SOLUTION');
+        % Nothing to do here. Keep moving.
 end
 
 if (config.BIGM == false), % This goes down to the end of FASE 2
@@ -406,6 +414,8 @@ while (tablav(moname, iter)),
                 Z = C'*X;
                 flow = X;
                 printf("Add the following to the END of the file: %s\n", filename);
+                printf("c GNU Oflox (intermediate solution)\n");
+                printf("c File name: %s\n", filename);
                 printf("c Information for iteration %i, current cost z = %i\n", iter, Z);
                 printf("c FROM TO FLOW (TREE arcs)\n", filename);
                 printf("t %i %i %i\n", [DE(TLU==0), A(TLU==0), X(TLU==0)]');
