@@ -21,11 +21,11 @@ c GNU Oflox (intermediate solution)
 c File name: ../doc/nets/pfmc200.min
 c Information for iteration 0, current cost z = 107
 c FROM TO FLOW (TREE arcs)
-t 2 1 2
-t 2 3 12
-t 3 4 4
-t 5 4 1
-t 6 4 6
+t 2 1
+t 2 3
+t 3 4
+t 5 4
+t 6 4
 c FROM TO (UPPER arcs)
 u 5 2
 u 5 3
