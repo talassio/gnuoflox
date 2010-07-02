@@ -26,7 +26,7 @@
 function ret = mo(fnamepattern, iteracion, entrante, saliente, oldX, TLU_entrante, delta)
 % NAME: Multiple Outputs (MO)
 % VERSION: 1.0
-% DATE: 02/08/2008, 03/08/2008, 30/06/2009
+% DATE: 02/08/2008, 03/08/2008, 30/06/2009, 01/07/2010
 % DESCRIPTION:
 %   Function prints to \LaTeX and dot formats all information regarding a given iteration, except the reduced cost table
 %   which is done by tablav() function.
@@ -35,7 +35,7 @@ function ret = mo(fnamepattern, iteracion, entrante, saliente, oldX, TLU_entrant
 %   ``iter'' files [F1|M-]<fnamepattern>_<iteracion>.{dot|tex} and
 %   ``iter-1'' files  [F1|M-]<fnamepattern>_TV_<iteracion>.tex and [F1|M-]<fnamepattern>_<iteracion>a.tex, and
 %   1 file fnamepattern.{dot|tex} describing the problem
-
+% BUG FIX
 
 % Configuration vars, eye candy:
 nodesep = 0.66;
@@ -467,12 +467,29 @@ if (TLU_entrante >= -1), % if TLU_entrante is less than LOWER (== -1) then we ON
                         end
                 end
         else
+%% BUG FIX 01/07/2010
+%%
+%% <- fprintf(ftex, '    ($%i$, $%i$) & $%i$ & $\\mathcal{%c}$ & $%i$\\\\\n', [DE, A, X, tlu_cal, C]');
+%% -> for i = 1:length(DE),
+%% ->        fprintf(ftex, '    ($%i$, $%i$) & $%i$ & $\\mathcal{%c}$ & $%i$\\\\\n', DE(i), A(i), X(i), tlu_cal(i), C(i));
+%% -> end;
+
+
                 if ( ( iteracion == 0 ) & ( MO.sol0 == false ) ),
-                        fprintf(ftex, '    ($%i$, $%i$) & $%i$ & $\\mathcal{%c}$ & $%i$\\\\\n', [DE, A, X, tlu_cal C]');
+                        for i = 1:length(DE),
+                                fprintf(ftex, '    ($%i$, $%i$) & $%i$ & $\\mathcal{%c}$ & $%i$\\\\\n', DE(i), A(i), X(i), tlu_cal(i), C(i));
+                        end;
+%  %                          fprintf(ftex, '    ($%i$, $%i$) & $%i$ & $\\mathcal{%c}$ & $%i$\\\\\n', [num2str(DE), num2str(A), num2str(X), tlu_cal, num2str(C)]');
                 elseif ( ( iteracion == 0 ) | ( TLU_entrante == 2 ) ),
-                        fprintf(ftex, '    ($%i$, $%i$) & $%i$ & $\\mathcal{%c}$\\\\\n', [DE, A, X, tlu_cal]');
+                        for i = 1:length(DE),
+                                fprintf(ftex, '    ($%i$, $%i$) & $%i$ & $\\mathcal{%c}$\\\\\n', DE(i), A(i), X(i), tlu_cal(i));
+                        end;
+%  %                          fprintf(ftex, '    ($%i$, $%i$) & $%i$ & $\\mathcal{%c}$\\\\\n', [num2str(DE), num2str(A), num2str(X), tlu_cal]');
                 else
-                        fprintf(ftex, '    ($%i$, $%i$) & $%i$ & $%i$ & $\\mathcal{%c}$\\\\\n', [DE, A, oldX, X, tlu_cal]');
+                        for i = 1:length(DE),
+                                fprintf(ftex, '    ($%i$, $%i$) & $%i$ & $%i$ & $\\mathcal{%c}$\\\\\n', DE(i), A(i), oldX(i), X(i), tlu_cal(i));
+                        end;
+%  %                          fprintf(ftex, '    ($%i$, $%i$) & $%i$ & $%i$ & $\\mathcal{%c}$\\\\\n', [num2str(DE), num2str(A), num2str(oldX), num2str(X), tlu_cal]');
                 end;
         end
         fprintf(ftex, '\\hline\n\\end{tabular}\n');
