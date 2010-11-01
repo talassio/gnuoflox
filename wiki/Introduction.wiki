@@ -13,14 +13,14 @@ Add your content here.
 
 In order for GNU Oflox to work properly, it requires
   * GNU Octave 2.0 or higher 
-  * A GNU/Linux compatible Operating System
+  * A GNU / Linux compatible Operating System
   * A mighty *[http://www.ctan.org/ LaTeX]* distribution (for the commands *latex* and *dvipdf*)
   * The powerful *dot* program from [http://www.graphviz.org/ graphviz]
 
 = Networks =
-The problems (networks) to be solved are specified in [http://lpsolve.sourceforge.net/5.5/DIMACS.htm DIMACS Challenge Min format], with a few extensions, [Dcmef for more information on this topic clic here.] 
+The problems (networks) to be solved are specified in [http://lpsolve.sourceforge.net/5.5/DIMACS.htm DIMACS Challenge Min format], with a few extensions, [Dcmef for more information on this topic click here.] 
 
-= Instalation =
+= Installation =
 
 Here we will discuss how to install and load this package. First you need to grab the most recent copy of this package, *gnuoflox-x.y.z-tar.gz*, and save it to the /tmp directory.
 
@@ -31,7 +31,7 @@ Here we will discuss how to install and load this package. First you need to gra
 To install the package open a console and follow these steps:
     # `$ cd /tmp`
     # `$ octave`
-    # *Update:* if using *Ubuntu +10.04, then you need to start octave with the `-f` switch, that is: `$ octave -f`
+    # *Update:* if using Ubuntu 10.04 or newer, then start GNU Octave with the `-f` switch, that is: `$ octave -f`
     # `octave:1> pkg install gnuoflox-x.y.z-tar.gz`
 
 The package is now installed, but to use it, you need to previously load it inside Octave. 
