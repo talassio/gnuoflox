@@ -12,7 +12,7 @@ Add your content here.
 = Software requirements =
 
 In order for GNU Oflox to work properly, it requires
-  * GNU Octave 2.0 or higher 
+  * GNU Octave 3.2.3 or higher 
   * A GNU / Linux compatible Operating System
   * A mighty *[http://www.ctan.org/ LaTeX]* distribution (for the commands *latex* and *dvipdf*)
   * The powerful *dot* program from [http://www.graphviz.org/ graphviz]
