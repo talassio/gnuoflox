@@ -46,7 +46,7 @@ global mo_lang;
 ftv = 0;
 
 if ( ~isempty(filetv) ),
-        filetv = strcat(filetv, '_TV', '_', num2str(iteration), '.tex');
+        filetv = cstrcat(filetv, '_TV', '_', num2str(iteration), '.tex');
         [ftv, message] = fopen(filetv, 'w');
         if (ftv == -1),
                 error('TABLAV: opening file [%s, w]:\n\t%s\n', filetv, message);
