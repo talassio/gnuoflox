@@ -73,16 +73,16 @@ global BIGMCOST;
 t = 0;
 
 if (iteracion == -1) % Only print out the problem and return
-        filedot = strcat(fnamepattern, '.dot');
-        filetex = strcat(fnamepattern, '.tex');
-        header = strcat('digraph initialization {\ngraph [center=1,nodesep=',num2str(nodesep),',ranksep=',num2str(ranksep),']\n');
+        filedot = cstrcat(fnamepattern, '.dot');
+        filetex = cstrcat(fnamepattern, '.tex');
+        header = cstrcat('digraph initialization {\ngraph [center=1,nodesep=',num2str(nodesep),',ranksep=',num2str(ranksep),']\n');
 elseif (iteracion == -2) % Only print the MAIN \LaTeX file and return
         error('This call is deprecated')
 else
-        filedot = strcat(fnamepattern, '_', num2str(iteracion), '.dot');
-        filetex = strcat(fnamepattern, '_', num2str(iteracion), '.tex');
-        filedotA = strcat(fnamepattern, '_', num2str(iteracion-1), 'a.dot');
-        header = strcat('digraph iter', num2str(iteracion),' {\ngraph [center=1,nodesep=',num2str(nodesep),',ranksep=',num2str(ranksep),']\n');
+        filedot = cstrcat(fnamepattern, '_', num2str(iteracion), '.dot');
+        filetex = cstrcat(fnamepattern, '_', num2str(iteracion), '.tex');
+        filedotA = cstrcat(fnamepattern, '_', num2str(iteracion-1), 'a.dot');
+        header = cstrcat('digraph iter', num2str(iteracion),' {\ngraph [center=1,nodesep=',num2str(nodesep),',ranksep=',num2str(ranksep),']\n');
 end
 if (ischar(filedot) == 0),
         error('MO: filedot description is not valid.');
