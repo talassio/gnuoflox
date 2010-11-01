@@ -32,7 +32,7 @@ enable the \LaTeX output
   * `config.latex = true;`
   * `config.compiledvi = true;`
 
-and finally, set a name for the problem to solve
+and finally, set a name for the problem to solve *Note: don't use special \LaTeX characters in the name! as underscores, &, or ^*
   * `config.aname = 'fmc3';`
 
 Now we are ready to solve the problem!
