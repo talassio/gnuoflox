@@ -31,8 +31,10 @@ Here we will discuss how to install and load this package. First you need to gra
 To install the package open a console and follow these steps:
     # `$ cd /tmp`
     # `$ octave`
+    # *Update:* if using *Ubuntu +10.04, then you need to start octave with the `-f` switch, that is: `$ octave -f`
     # `octave:1> pkg install gnuoflox-x.y.z-tar.gz`
-The package is now installed, but to use it, you need to preaviously load it inside Octave. 
+
+The package is now installed, but to use it, you need to previously load it inside Octave. 
 
 == Loading the package ==
 
