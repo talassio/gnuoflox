@@ -37,14 +37,17 @@ enable the \LaTeX output
 config.latex = true;
 config.compiledvi = true;
 }}}
-and finally, set a name for the problem to solve *Note: don't use special \LaTeX characters in the name! as underscores, &, or ^*
+and finally, set a name for the problem to solve 
+
+*Note: don't use special \LaTeX characters in the name! as underscores, &, or ^*
+
 {{{
 config.aname = 'fmc3';
 }}}
 
 Now we are ready to solve the problem!
 {{{
-octave:1> [Z X it, it0] = oflox('~/octave/gnuoflox-1.0.1/doc/nets/pfmc300.min', config)
+[Z X it, it0] = oflox('~/octave/gnuoflox-1.0.1/doc/nets/pfmc300.min', config)
 file is DIMACS MIN FORMAT
 file is DIMACS MIN FORMAT read OK.
 warning: Degenerated iteration detected. The flows don't change.
