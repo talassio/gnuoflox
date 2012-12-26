@@ -127,7 +127,7 @@ Now will follow a brief description of each element of the structure:
 || *configuration.show_depth* || Boolean value specifying wether to display the depth array on the tree graph. Defaults to false.||
 || *configuration.it_info* ||  This switch indicates that the information of a specific iteration is desired. The iteration information is displayed in DIMACS min extended format ready to be included in a DIMACS min extended file. Once displayed the information the iterations are stopped. If the value is less than 0 then no information is displayed. Defaults to -1.||
 
-== Usage ==
+== Demo ==
 For starters, let solve a simple network that is provided with the package. The network is described in [http://lpsolve.sourceforge.net/5.5/DIMACS.htm DIMACS Challenge MIN format] in the file
 
 `~/octave/gnuoflox-x.y.z/doc/nets/pfmc300.min`
