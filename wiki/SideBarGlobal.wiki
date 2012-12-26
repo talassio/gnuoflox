@@ -1,7 +1,7 @@
 #summary The side bar
 === Site Navigation ===
   * [Introduction Introduction]
-  * [CompleteExample Example on usage]
+  * [CompleteExample Example]
   * [Examples Screenshots and more examples]
   * [WindowsGeneric GNU Oflox under MS Windows]
   * [Dcmef DIMACS Challenge Min Extended Format]
