@@ -4,8 +4,6 @@
 
 = Introduction =
 
-Add your content here.
-
 
 = Details =
 
@@ -13,9 +11,9 @@ Add your content here.
 
 In order for GNU Oflox to work properly, it requires
   * GNU Octave 3.2.3 or higher 
-  * A GNU / Linux compatible Operating System
-  * A mighty *[http://www.ctan.org/ LaTeX]* distribution (for the commands *latex* and *dvipdf*)
-  * The powerful *dot* program from [http://www.graphviz.org/ graphviz]
+  * GNU / Linux compatible Operating System
+  * *[http://www.ctan.org/ LaTeX]* distribution (for the commands *latex* and *dvipdf*)
+  * *dot* program from [http://www.graphviz.org/ graphviz]
 
 = Networks =
 The problems (networks) to be solved are specified in [http://lpsolve.sourceforge.net/5.5/DIMACS.htm DIMACS Challenge Min format], with a few extensions, [Dcmef for more information on this topic click here.] 
@@ -34,7 +32,7 @@ To install the package open a console and follow these steps:
     # *Update:* if using Ubuntu 10.04 or newer, then start GNU Octave with the `-f` switch, that is: `$ octave -f`
     # `octave:1> pkg install gnuoflox-x.y.z-tar.gz`
 
-The package is now installed, but to use it, you need to previously load it inside Octave. 
+The package is now installed, but to use it, you need to previously load it inside GNU Octave. 
 
 == Loading the package ==
 
@@ -56,7 +54,7 @@ To uninstall the package, execute GNU Octave and type the folloing command
 After that, the package will be removed from your system.
 
 == Upgrading to a newer version ==
-Say you have installed GNU Oflox version 1.0.1 but there is a more recent one, version 1.0.2, in order to upgrade you first need to uninstall version 1.0.1 and then install the version 1.0.2 as as described above.
+In order to upgrade you first need to uninstall the previous version and then install the newer version, as described above.
 
 = Using GNU Oflox =
 Here we introduce the usage of the package through and example.
@@ -67,7 +65,7 @@ Once loaded the package in Octave, there are two commands available
   # `ofloxconfig()`
 
 === oflox ===
-This is the main command of the GNU Oflox packages, it is an implementation of the Simplex MCF, it's syntax is
+This is the main command of the GNU Oflox package, the correct syntax is
 
 `[Z, X, it, it0] = oflox(filename, configuration);`
 
