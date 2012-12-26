@@ -134,12 +134,15 @@ For starters, let solve a simple network that is provided with the package. The 
 
 Start Octave and load the GNU Oflox package
 
-{{{pkg load gnuoflox}}}
+{{{
+pkg load gnuoflox
+}}}
 
 Now solve the network problem
 
 
-{{{[ Z X it it0 ] = oflox("~/octave/gnuoflox-x.y.z/doc/nets/pfmc300.min")
+{{{
+[ Z X it it0 ] = oflox("~/octave/gnuoflox-x.y.z/doc/nets/pfmc300.min")
 Z =  4
 X =
 
@@ -155,6 +158,7 @@ X =
 it =  6
 it0 = 0
 }}}
+
 The output indicates
  that the problem's objective optimum value is 4 units and can be achieved by setting each arc's flow as indicated by the vector X and required 6 Simplex FMC iterations and 0 FASE I iterations (this is because the problem was solved using Big-M method).
 
