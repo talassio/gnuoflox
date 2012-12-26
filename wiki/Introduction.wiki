@@ -162,6 +162,6 @@ it0 = 0
 The output indicates
 that the problem's objective optimum value is 4 units and can be achieved by setting each arc's flow as indicated by the vector X and required 6 Simplex FMC iterations and 0 FASE I iterations (this is because the problem was solved using Big-M method).
 
-
-Now that we are experts using GNU oflox, let's use some more advanced features. 
-[CompleteExample Click here to view a more complete example].
+It's this simple to use the basic features of GNU Oflox. 
+[CompleteExample Click here to view a more complete example] that uses more advanced features. 
+.
