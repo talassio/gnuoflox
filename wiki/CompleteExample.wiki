@@ -10,11 +10,12 @@ In the following example we solve the [Introduction#Usage same problem used in t
 but using FASE I/II and setting the output to a PDF file showing the initial problem, the steps involved and the optimum solution.
 
 = Details =
-[http://code.google.com/u/talassio/ I] strongly sugest to open a new folder for each problem to solve, so let's start off by opening the console, creating a new folder named `fmc3` and moving in to it
-
-`cd ~`
-
-`mkdir fmc3 && cd fmc3` 
+It is strongly sugested to open a new folder for each problem to solve, so start off by opening the console, creating a new folder named `fmc3` and moving in to it
+{{{
+cd ~
+mkdir fmc3
+cd fmc3
+}}}
 
 Start up GNU Octave and load the package,
 {{{
