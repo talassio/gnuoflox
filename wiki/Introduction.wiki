@@ -1,4 +1,4 @@
-#summary Introduction to the GNU Oflox package
+#summary Introduction to GNU Oflox
 #labels Featured,Phase-Requirements
 #sidebar SideBarGlobal
 
