@@ -16,9 +16,9 @@ but using FASE I/II and setting the output to a PDF file showing the initial pro
 
 `mkdir fmc3 && cd fmc3` 
 
-Start up octave and load the package,
+Start up GNU Octave and load the package,
 {{{
-octave:1> pkg load gnuoflox` 
+pkg load gnuoflox` 
 }}}
 then type
 {{{
@@ -27,14 +27,19 @@ config = ofloxconfig;
 
 in order to customize the diverse settings. Let's 
 enable FASE I/II and disable Big-M methods
-  * `config.FASE1 = true;`
-  * `config.BIGM = false;`
+{{{
+config.FASE1 = true;
+config.BIGM = false;
+}}}
 enable the \LaTeX output
-  * `config.latex = true;`
-  * `config.compiledvi = true;`
-
+{{{
+config.latex = true;
+config.compiledvi = true;
+}}}
 and finally, set a name for the problem to solve *Note: don't use special \LaTeX characters in the name! as underscores, &, or ^*
-  * `config.aname = 'fmc3';`
+{{{
+config.aname = 'fmc3';
+}}}
 
 Now we are ready to solve the problem!
 {{{
