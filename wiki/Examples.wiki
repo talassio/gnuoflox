@@ -1,4 +1,4 @@
-#summary Screen shots and examples
+#summary Screenshots and examples
 #labels Featured
 #sidebar SideBarGlobal
 
