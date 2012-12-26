@@ -1,7 +1,7 @@
-#summary A simple example on the usage of the GNU Oflox package
+#summary Example on the usage of GNU Oflox
 #sidebar SideBarGlobal
 
-= A simple example =
+= A complete example =
 
 In the following example we solve the [Introduction#Usage same problem used in the introduction page], described by the file 
 
@@ -17,12 +17,13 @@ but using FASE I/II and setting the output to a PDF file showing the initial pro
 `mkdir fmc3 && cd fmc3` 
 
 Start up octave and load the package,
-
-`octave:1> pkg load gnuoflox` 
-
+{{{
+octave:1> pkg load gnuoflox` 
+}}}
 then type
-
-`config = ofloxconfig;`
+{{{
+config = ofloxconfig;
+}}}
 
 in order to customize the diverse settings. Let's 
 enable FASE I/II and disable Big-M methods
