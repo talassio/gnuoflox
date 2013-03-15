@@ -16,7 +16,8 @@ In order for GNU Oflox to work properly, it requires
   * *dot* program from [http://www.graphviz.org/ graphviz]
 
 = Networks =
-The problems (networks) to be solved are specified in [http://lpsolve.sourceforge.net/5.5/DIMACS.htm DIMACS Challenge Min format], with a few extensions, [Dcmef for more information on this topic click here.] 
+The problems (networks) to be solved are specified in [http://lpsolve.sourceforge.net/5.5/DIMACS.htm DIMACS Challenge Min format]
+([http://dimacs.rutgers.edu/Challenges/ DIMACS link] and for file specs see [ftp://dimacs.rutgers.edu/pub/netflow/general-info/specs.tex Section 7 of the Specs]), with a few extensions, [Dcmef for more information on the extensions topic click here.] 
 
 = Installation =
 
@@ -69,7 +70,7 @@ This is the main command of the GNU Oflox package, the correct syntax is
 
 `[Z, X, it, it0] = oflox(filename, configuration);`
 
-the `oflox` command requires *only* one parameter, `filename`, the variable specifying the path to `filename.min` that contains the problem (network) to be solved in [http://lpsolve.sourceforge.net/5.5/DIMACS.htm DIMACS Challenge MIN format]. Extra configuration parameters can be customized via the configuration variable. This commands returns four variables 
+the `oflox` command requires *only* one parameter, `filename`, the variable specifying the path to `filename.min` that contains the problem (network) to be solved in [http://lpsolve.sourceforge.net/5.5/DIMACS.htm DIMACS Challenge MIN format] ([http://dimacs.rutgers.edu/Challenges/ DIMACS link]). Extra configuration parameters can be customized via the configuration variable. This commands returns four variables 
 
   * `Z` the cost of the optimal solution,
   * `X` the flows vector
@@ -128,7 +129,7 @@ Now will follow a brief description of each element of the structure:
 || *configuration.it_info* ||  This switch indicates that the information of a specific iteration is desired. The iteration information is displayed in DIMACS min extended format ready to be included in a DIMACS min extended file. Once displayed the information the iterations are stopped. If the value is less than 0 then no information is displayed. Defaults to -1.||
 
 == Demo ==
-For starters, let solve a simple network that is provided with the package. The network is described in [http://lpsolve.sourceforge.net/5.5/DIMACS.htm DIMACS Challenge MIN format] in the file
+For starters, let solve a simple network that is provided with the package. The network is described in [http://lpsolve.sourceforge.net/5.5/DIMACS.htm DIMACS Challenge MIN format] ([http://dimacs.rutgers.edu/Challenges/ DIMACS link]) in the file
 
 `~/octave/gnuoflox-x.y.z/doc/nets/pfmc300.min`
 
