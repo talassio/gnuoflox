@@ -2,11 +2,6 @@
 #labels Featured,Phase-Requirements
 #sidebar SideBarGlobal
 
-= Introduction =
-
-
-= Details =
-
 = Software requirements =
 
 In order for GNU Oflox to work properly, it requires
