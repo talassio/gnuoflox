@@ -3,9 +3,9 @@
 #sidebar SideBarGlobal
 
 = Screen shots = 
-The following screen shot sequence shows the tipical steps involved while solving a [http://en.wikipedia.org/wiki/Minimum_cost_flow Minimum Cost Flow network problem], in this case, the [http://gnuoflox.googlecode.com/files/pfmcexx1.min PFMCEXX1] problem!
+The following screen shot sequence shows the tipical steps involved while solving a [http://en.wikipedia.org/wiki/Minimum_cost_flow Minimum Cost Flow network problem], in this case, the [http://gnuoflox.googlecode.com/files/pfmcexx1.min PFMCEXX1] problem.
 
-Click an image to enlarge
+Click an image to enlarge.
 
 ||(1/4) The problem in DIMACS Challenge Min Extended format, shown in the text editor Kate||(2/4) Octave while solving||
 ||[http://gnuoflox.googlecode.com/files/theminfile.png http://gnuoflox.googlecode.com/files/theminfile-small.png]||[http://gnuoflox.googlecode.com/files/theoctaveshell.png http://gnuoflox.googlecode.com/files/theoctaveshell-small.png]||
