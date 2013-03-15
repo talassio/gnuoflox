@@ -57,7 +57,7 @@ c End
 </pre>
 
 = Usage =
-When solving a problem in which the MIN file has the above extension, GNU Oflox recognizes the extension but uses the feasible solution *only* if asked to start solving from that point, using the `config.sol0 = true`; on the contrary it will default to use Big-M method from scratch ignoring the file's feasible solution.
+When solving a problem in which the MIN file has the above extension, GNU Oflox recognizes the extension but uses the feasible solution *only* if asked to start solving from that point, using setting `config.sol0 = true`; on the contrary it will default to use Big-M method from scratch, ignoring the file's feasible solution.
 
 = Example =
 <code language="matlab">
