@@ -3,11 +3,11 @@
 
 = A complete example =
 
-In the following example we solve the [Introduction#Usage same problem used in the introduction page], described by the file 
+In the following example we solve the [Introduction#Usage same problem used in the introduction page], described by the file
 
 `~/octave/gnuoctave-1.0.2/doc/nets/pfmc300.min`
 
-but using FASE I/II and setting the output to a PDF file showing the initial problem, the steps involved and the optimum solution.
+but using Phase I/II and setting the output to a PDF file showing the initial problem, the steps involved and the optimum solution.
 
 = Details =
 It is strongly sugested to open a new folder for each problem to solve, so start off by opening the console, creating a new folder named `fmc3` and moving in to it
@@ -19,17 +19,17 @@ cd fmc3
 
 Start up GNU Octave and load the package,
 {{{
-pkg load gnuoflox` 
+pkg load gnuoflox`
 }}}
 then type
 {{{
 config = ofloxconfig;
 }}}
 
-in order to customize the diverse settings. Let's 
-enable FASE I/II and disable Big-M methods
+in order to customize the diverse settings. Let's
+enable Phase I/II and disable Big-M methods
 {{{
-config.FASE1 = true;
+config.Phase1 = true;
 config.BIGM = false;
 }}}
 enable the \LaTeX output
@@ -37,7 +37,7 @@ enable the \LaTeX output
 config.latex = true;
 config.compiledvi = true;
 }}}
-and finally, set a name for the problem to solve 
+and finally, set a name for the problem to solve
 
 *Note: don't use special \LaTeX characters in the name! as underscores, &, or ^*
 
@@ -74,7 +74,7 @@ X =
 it =  1
 it0 =  5
 }}}
-indicating that the problem's objective optimum value is 4 units *as expected* (see the [Introduction#Usage Introductory page]) and can be achieved by setting each arc's flow as indicated by the vector X, it required *only* 1 Simplex FMC iterations but *6* FASE I iterations. Besides this information we note the output states
+indicating that the problem's objective optimum value is 4 units *as expected* (see the [Introduction#Usage Introductory page]) and can be achieved by setting each arc's flow as indicated by the vector X, it required *only* 1 Simplex FMC iterations but *6* Phase I iterations. Besides this information we note the output states
 
 `MO: Master output document master_fmc3.tex compiled to master_fmc3.dvi and master_fmc3.pdf`
 
@@ -98,4 +98,4 @@ Most of the files listed in the above table are the LaTeX source files to genera
 The folloing images show some pages of the PDF output (Click on them to enlarge)
 
 || [http://gnuoflox.googlecode.com/files/master_fmc3-0.png http://gnuoflox.googlecode.com/files/master_fmc3-0-small.png] || [http://gnuoflox.googlecode.com/files/master_fmc3-2.png http://gnuoflox.googlecode.com/files/master_fmc3-2-small.png]|| [http://gnuoflox.googlecode.com/files/master_fmc3-9.png http://gnuoflox.googlecode.com/files/master_fmc3-9-small.png]|| [http://gnuoflox.googlecode.com/files/master_fmc3-10.png http://gnuoflox.googlecode.com/files/master_fmc3-10-small.png] ||
-||The problem || Iteration 1/6 of FASE I || Iteration 1/1 of FASE II || The solution ||
+||The problem || Iteration 1/6 of Phase I || Iteration 1/1 of Phase II || The solution ||
