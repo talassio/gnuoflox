@@ -57,7 +57,7 @@
 ##                              solution defined in ``filename''. Defaults to false.
 ##
 ##          config.FASE1:       Boolean value indicating wether the problem should be solved using
-##                              FASE 1 / FASE 2. Defaults to false.
+##                              PHASE 1 / PHASE 2. Defaults to false.
 ##
 ##          config.BIGM:        Boolean value indicating wether the problem should be solved using Big M.
 ##                              Defaults to true.
