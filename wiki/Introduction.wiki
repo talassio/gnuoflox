@@ -70,7 +70,7 @@ the `oflox` command requires *only* one parameter, `filename`, the variable spec
   * `Z` the cost of the optimal solution,
   * `X` the flows vector
   * `it` number of iterations required to find the optimal solution
-  * `it0` number of iterations required to find a starting feasable solution in the case of using FASE I.  
+  * `it0` number of iterations required to find a starting feasable solution in the case of using PHASE I.  
 
 === ofloxconfig ===
 This is an auxiliary command used to configure the behaviour of the `oflox` command, it's syntax is very basic:
@@ -104,7 +104,7 @@ configuration =
 Now will follow a brief description of each element of the structure:
 || *Element* || *Description* ||
 || *configuration.sol0*  ||    Boolean value indicating wether to use or not the initial feaseble solution defined in ``filename''. Defaults to false.||
-|| *configuration.FASE1* ||    Boolean value indicating wether the problem should be solved using FASE 1 / FASE 2. Defaults to false.||
+|| *configuration.FASE1* ||    Boolean value indicating wether the problem should be solved using PHASE 1 / PHASE 2. Defaults to false.||
 || *configuration.BIGM*  ||    Boolean value indicating wether the problem should be solved using Big M. Defaults to true.||
 || *configuration.latex* ||    Boolean value indicating wether to output latex code or not. Default to false.||
 || *configuration.compiledvi* || Boolean value indicating wether to compile to DVI and PDF the \LaTeX generated source. This switch is only relevant is configuration.latex is true.||
@@ -156,7 +156,7 @@ it0 = 0
 }}}
 
 The output indicates
-that the problem's objective optimum value is 4 units and can be achieved by setting each arc's flow as indicated by the vector X and required 6 Simplex FMC iterations and 0 FASE I iterations (this is because the problem was solved using Big-M method).
+that the problem's objective optimum value is 4 units and can be achieved by setting each arc's flow as indicated by the vector X and required 6 Simplex FMC iterations and 0 PHASE I iterations (this is because the problem was solved using Big-M method).
 
 It's this simple to use the basic features of GNU Oflox. 
 [CompleteExample Click here to view a more complete example] that uses more advanced features.
